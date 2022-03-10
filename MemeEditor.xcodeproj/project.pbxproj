@@ -14,6 +14,7 @@
 		C3020E4027D38D830090894E /* MemeEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E3F27D38D830090894E /* MemeEditorTests.swift */; };
 		C3020E4A27D38D830090894E /* MemeEditorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E4927D38D830090894E /* MemeEditorUITests.swift */; };
 		C3020E4C27D38D830090894E /* MemeEditorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */; };
+		C3020E5927D3F3E90090894E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E5827D3F3E90090894E /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		C3020E4527D38D830090894E /* MemeEditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeEditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3020E4927D38D830090894E /* MemeEditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorUITests.swift; sourceTree = "<group>"; };
 		C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C3020E5827D3F3E90090894E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				C3020E2E27D38D800090894E /* MemeEditorApp.swift */,
 				C3020E3027D38D800090894E /* ContentView.swift */,
+				C3020E5827D3F3E90090894E /* ImagePicker.swift */,
 				C3020E3227D38D820090894E /* Assets.xcassets */,
 				C3020E3427D38D820090894E /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3020E5927D3F3E90090894E /* ImagePicker.swift in Sources */,
 				C3020E3127D38D800090894E /* ContentView.swift in Sources */,
 				C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */,
 			);
