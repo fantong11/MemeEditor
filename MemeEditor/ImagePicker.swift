@@ -27,29 +27,28 @@ struct ImagePicker: UIViewControllerRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
+}
+
+class Coordinator: NSObject, PHPickerViewControllerDelegate {
+    // 上面ImagePicker的instance
+    let parent: ImagePicker
     
-    class Coordinator: NSObject, PHPickerViewControllerDelegate {
-        // 上面ImagePicker的instance
-        let parent: ImagePicker
+    init(_ parent: ImagePicker) {
+        self.parent = parent
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
         
-        init(_ parent: ImagePicker) {
-            self.parent = parent
-        }
+        guard let provider = results.first?.itemProvider else { return }
         
-        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            picker.dismiss(animated: true)
-            
-            guard let provider = results.first?.itemProvider else {
-                return
-            }
-            
+        DispatchQueue.main.async {
             if provider.canLoadObject(ofClass: UIImage.self) {
                 provider.loadObject(ofClass: UIImage.self) { image, _ in
                     self.parent.image = image as? UIImage
                 }
             }
-            
-            
         }
+        
     }
 }

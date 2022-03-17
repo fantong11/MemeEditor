@@ -11,7 +11,7 @@ import SwiftUI
 struct MemeEditorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ImagePickView()
         }
     }
 }
