@@ -14,6 +14,7 @@ struct UserDefaultInfo<Value> {
 
 extension UserDefaultInfo {
     func get() -> Value {
+        // 拿不到的話就拿預設的值
         guard let valueUntyped = UserDefaults.standard.object(forKey: self.key) else {
             return self.defaultValue
         }
@@ -29,6 +30,7 @@ extension UserDefaultInfo {
 }
 
 extension UserDefaults {
+    // 移除裡面自己設的key
     public func removeDefaults() {
         let defaults = UserDefaults.standard
         defaults.dictionaryRepresentation().keys.forEach { key in
