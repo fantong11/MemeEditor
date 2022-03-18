@@ -30,7 +30,6 @@ struct ImagePicker: UIViewControllerRepresentable {
 }
 
 class Coordinator: NSObject, PHPickerViewControllerDelegate {
-    // 上面ImagePicker的instance
     let parent: ImagePicker
     
     init(_ parent: ImagePicker) {
@@ -42,13 +41,14 @@ class Coordinator: NSObject, PHPickerViewControllerDelegate {
         
         guard let provider = results.first?.itemProvider else { return }
         
-        DispatchQueue.main.async {
-            if provider.canLoadObject(ofClass: UIImage.self) {
-                provider.loadObject(ofClass: UIImage.self) { image, _ in
-                    self.parent.image = image as? UIImage
+        if provider.canLoadObject(ofClass: UIImage.self) {
+            provider.loadObject(ofClass: UIImage.self) { image, _ in
+                Task.init {
+                    await MainActor.run {
+                        self.parent.image = image as? UIImage
+                    }
                 }
             }
         }
-        
     }
 }
