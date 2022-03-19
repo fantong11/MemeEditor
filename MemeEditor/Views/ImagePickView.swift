@@ -10,27 +10,38 @@ import SwiftUI
 struct ImagePickView: View {
     // image for ui
     @State private var image: Image?
-    @ObservedObject var viewModel = ImagePickViewModel()
+    @State private var isShowingEditView = false
+    @ObservedObject var viewModel = ViewModel()
+    
+    
     
     var body: some View {
-        VStack {
-            Button("Choose an image from gallery") {
-                viewModel.showingImagePicker = true
-            }
-            .accessibilityIdentifier("pickImageButton")
-            .padding()
-            image?
-                .resizable()
-                .scaledToFit()
+        NavigationView {
+            VStack {
+                Button("Choose an image from gallery") {
+                    viewModel.showingImagePicker = true
+                }
+                .accessibilityIdentifier("pickImageButton")
                 .padding()
-                .accessibilityIdentifier("pickedImage")
-        }
-        .navigationTitle("Choose an image")
-        .onChange(of: viewModel.inputImage) { _ in
-            image = viewModel.loadImage()
-        }
-        .sheet(isPresented: $viewModel.showingImagePicker) {
-            ImagePicker(image: $viewModel.inputImage)
+                
+                NavigationLink(destination: ImageEditView(baseImage: $viewModel.inputImage), isActive: $isShowingEditView) { EmptyView() }
+
+                Button("Tap to use Doc Oct") {
+                    viewModel.inputImage = UIImage(named: "hello-peter")
+                    isShowingEditView = true
+                }
+            }
+            .navigationTitle("Choose an image")
+            .onChange(of: viewModel.inputImage) { _ in
+                if let inputImage = viewModel.inputImage {
+                    image = Image(uiImage: inputImage)
+                    
+                    isShowingEditView = true
+                }
+            }
+            .sheet(isPresented: $viewModel.showingImagePicker) {
+                ImagePicker(image: $viewModel.inputImage)
+            }
         }
     }
 }
