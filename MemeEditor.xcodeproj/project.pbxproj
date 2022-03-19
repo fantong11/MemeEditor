@@ -16,7 +16,7 @@
 		C3020E4C27D38D830090894E /* MemeEditorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */; };
 		C3020E5927D3F3E90090894E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E5827D3F3E90090894E /* ImagePicker.swift */; };
 		C337B94927DA352100D23028 /* ImagePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337B94827DA352100D23028 /* ImagePickerTests.swift */; };
-		C337B94B27DA408F00D23028 /* ImagePickVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337B94A27DA408F00D23028 /* ImagePickVIewModel.swift */; };
+		C337B94B27DA408F00D23028 /* ImagePickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337B94A27DA408F00D23028 /* ImagePickViewModel.swift */; };
 		C3DFC7A327D9C0D5001A2D97 /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC7A227D9C0D5001A2D97 /* ImagePickView.swift */; };
 		C3DFC7A527D9C482001A2D97 /* ImagePickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */; };
 		C3F0972E27E3619400CA7D02 /* UserDefaultInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */; };
@@ -53,7 +53,7 @@
 		C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C3020E5827D3F3E90090894E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C337B94827DA352100D23028 /* ImagePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerTests.swift; sourceTree = "<group>"; };
-		C337B94A27DA408F00D23028 /* ImagePickVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickVIewModel.swift; sourceTree = "<group>"; };
+		C337B94A27DA408F00D23028 /* ImagePickViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickViewModel.swift; sourceTree = "<group>"; };
 		C3DFC7A227D9C0D5001A2D97 /* ImagePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
 		C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickUITests.swift; sourceTree = "<group>"; };
 		C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultInfo.swift; sourceTree = "<group>"; };
@@ -108,13 +108,13 @@
 		C3020E2D27D38D800090894E /* MemeEditor */ = {
 			isa = PBXGroup;
 			children = (
+				C3020E3227D38D820090894E /* Assets.xcassets */,
+				C3020E3427D38D820090894E /* Preview Content */,
 				C3020E2E27D38D800090894E /* MemeEditorApp.swift */,
 				C3020E3027D38D800090894E /* ContentView.swift */,
 				C3020E5827D3F3E90090894E /* ImagePicker.swift */,
 				C3DFC7A227D9C0D5001A2D97 /* ImagePickView.swift */,
-				C337B94A27DA408F00D23028 /* ImagePickVIewModel.swift */,
-				C3020E3227D38D820090894E /* Assets.xcassets */,
-				C3020E3427D38D820090894E /* Preview Content */,
+				C337B94A27DA408F00D23028 /* ImagePickViewModel.swift */,
 				C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */,
 			);
 			path = MemeEditor;
@@ -282,7 +282,7 @@
 				C3020E5927D3F3E90090894E /* ImagePicker.swift in Sources */,
 				C3020E3127D38D800090894E /* ContentView.swift in Sources */,
 				C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */,
-				C337B94B27DA408F00D23028 /* ImagePickVIewModel.swift in Sources */,
+				C337B94B27DA408F00D23028 /* ImagePickViewModel.swift in Sources */,
 				C3DFC7A327D9C0D5001A2D97 /* ImagePickView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
