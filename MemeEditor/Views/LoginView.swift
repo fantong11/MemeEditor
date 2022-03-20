@@ -35,6 +35,14 @@ struct LoginView: View {
                 }
                 
                 Button {
+                    switch viewModel.viewState {
+                    case .login:
+                        viewModel.login()
+                    case .signin:
+                        viewModel.signin()
+                    case .resetPassword:
+                        viewModel.resetPassword()
+                    }
                     
                 } label: {
                     

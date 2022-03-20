@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 enum LoginState {
     case login
@@ -22,4 +23,43 @@ class LoginViewModel: ObservableObject {
     init() {
         
     }
+    
+    func login() {
+        print(email, password)
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let strongSelf = self else { return }
+            
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            if !Auth.auth().currentUser!.isEmailVerified {
+                print("Email is not verified.")
+                return
+            }
+        }
+    }
+    
+    func signin() {
+        print(email, password)
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            Auth.auth().currentUser?.sendEmailVerification(completion: { error in
+                if error != nil {
+                    print(error!)
+                }
+            })
+            
+        }
+    }
+    
+    func resetPassword() {
+        print(email)
+    }
+    
 }

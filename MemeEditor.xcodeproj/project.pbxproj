@@ -133,17 +133,17 @@
 		C3020E2D27D38D800090894E /* MemeEditor */ = {
 			isa = PBXGroup;
 			children = (
-				C3E8773A27E6638100CBFFE9 /* Extensions */,
+				C3F1249F27E5B742009494BD /* GoogleService-Info.plist */,
 				11FCEB6F27E63DAE0013412D /* Info.plist */,
-				C3F124A527E5C397009494BD /* Utilities */,
-				C3F124A427E5C268009494BD /* Components */,
-				C3F124A327E5C23E009494BD /* Views */,
-				C3F124A227E5C230009494BD /* ViewModels */,
-				C3F124A127E5C20D009494BD /* Models */,
 				C3020E2E27D38D800090894E /* MemeEditorApp.swift */,
 				C3020E3227D38D820090894E /* Assets.xcassets */,
+				C3F124A427E5C268009494BD /* Components */,
+				C3E8773A27E6638100CBFFE9 /* Extensions */,
+				C3F124A127E5C20D009494BD /* Models */,
 				C3020E3427D38D820090894E /* Preview Content */,
-				C3F1249F27E5B742009494BD /* GoogleService-Info.plist */,
+				C3F124A527E5C397009494BD /* Utilities */,
+				C3F124A227E5C230009494BD /* ViewModels */,
+				C3F124A327E5C23E009494BD /* Views */,
 			);
 			path = MemeEditor;
 			sourceTree = "<group>";
@@ -195,7 +195,6 @@
 		C3F124A227E5C230009494BD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C337B94A27DA408F00D23028 /* ImagePickViewModel.swift */,
 				C3F124A827E5D991009494BD /* LoginViewModel.swift */,
 				11FCEB6B27E5F2A00013412D /* ImagePickViewModel.swift */,
 				11FCEB6127E591EE0013412D /* ImageEditViewModel.swift */,
@@ -206,8 +205,6 @@
 		C3F124A327E5C23E009494BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C3DFC7A227D9C0D5001A2D97 /* ImagePickView.swift */,
-				C3020E3027D38D800090894E /* ContentView.swift */,
 				C3F124A627E5C966009494BD /* LoginView.swift */,
 				11FCEB6527E5F2790013412D /* ContentView.swift */,
 				11FCEB6727E5F27F0013412D /* ImagePickView.swift */,
@@ -219,7 +216,6 @@
 		C3F124A427E5C268009494BD /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C3020E5827D3F3E90090894E /* ImagePicker.swift */,
 				C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */,
 				C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */,
 				11FCEB6927E5F2900013412D /* ImagePicker.swift */,
@@ -382,15 +378,11 @@
 				11E03E7527E480540048CFC0 /* ImageEditView.swift in Sources */,
 				C3F0972E27E3619400CA7D02 /* UserDefaultInfo.swift in Sources */,
 				C3F124A727E5C966009494BD /* LoginView.swift in Sources */,
-				C3020E5927D3F3E90090894E /* ImagePicker.swift in Sources */,
-				C3020E3127D38D800090894E /* ContentView.swift in Sources */,
 				C3F124A927E5D991009494BD /* LoginViewModel.swift in Sources */,
 				11FCEB6627E5F2790013412D /* ContentView.swift in Sources */,
 				11FCEB6A27E5F2900013412D /* ImagePicker.swift in Sources */,
 				C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */,
 				C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */,
-				C337B94B27DA408F00D23028 /* ImagePickViewModel.swift in Sources */,
-				C3DFC7A327D9C0D5001A2D97 /* ImagePickView.swift in Sources */,
 				11FCEB6C27E5F2A10013412D /* ImagePickViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
