@@ -14,9 +14,12 @@ enum LoginState {
 }
 
 class LoginViewModel: ObservableObject {
-    @Published var viewState: LoginState
+    @Published var viewState: LoginState = .login
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var checkPassword: String = ""
     
     init() {
-        viewState = .login
+        
     }
 }

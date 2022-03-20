@@ -20,6 +20,8 @@
 		C3DFC7A327D9C0D5001A2D97 /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC7A227D9C0D5001A2D97 /* ImagePickView.swift */; };
 		C3DFC7A527D9C482001A2D97 /* ImagePickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */; };
 		C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773B27E663AF00CBFFE9 /* ViewExtension.swift */; };
+		C3E8773E27E6DF7500CBFFE9 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */; };
+		C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */; };
 		C3F0972E27E3619400CA7D02 /* UserDefaultInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */; };
 		C3F0973227E3677A00CA7D02 /* UserDefaultInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0973127E3677A00CA7D02 /* UserDefaultInfoTests.swift */; };
 		C3F1249827E5B5B2009494BD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C3F1249727E5B5B2009494BD /* FirebaseAuth */; };
@@ -64,6 +66,8 @@
 		C3DFC7A227D9C0D5001A2D97 /* ImagePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
 		C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickUITests.swift; sourceTree = "<group>"; };
 		C3E8773B27E663AF00CBFFE9 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
+		C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithUnderLine.swift; sourceTree = "<group>"; };
 		C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultInfo.swift; sourceTree = "<group>"; };
 		C3F0973127E3677A00CA7D02 /* UserDefaultInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultInfoTests.swift; sourceTree = "<group>"; };
 		C3F1249F27E5B742009494BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				C3020E5827D3F3E90090894E /* ImagePicker.swift */,
+				C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */,
+				C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E8773E27E6DF7500CBFFE9 /* SecureInputView.swift in Sources */,
 				C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */,
 				C3F0972E27E3619400CA7D02 /* UserDefaultInfo.swift in Sources */,
 				C3F124A727E5C966009494BD /* LoginView.swift in Sources */,
@@ -360,6 +367,7 @@
 				C3020E3127D38D800090894E /* ContentView.swift in Sources */,
 				C3F124A927E5D991009494BD /* LoginViewModel.swift in Sources */,
 				C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */,
+				C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */,
 				C337B94B27DA408F00D23028 /* ImagePickViewModel.swift in Sources */,
 				C3DFC7A327D9C0D5001A2D97 /* ImagePickView.swift in Sources */,
 			);

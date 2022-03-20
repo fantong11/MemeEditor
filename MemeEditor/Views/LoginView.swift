@@ -10,51 +10,26 @@ import SwiftUI
 struct LoginView: View {
     @ObservedObject var viewModel = LoginViewModel()
     
-    @State var account: String = ""
-    @State var password: String = ""
-    @State var checkPassword: String = ""
-    @FocusState var accountTextFieldIsFocused: Bool
-    @FocusState var passordTextFieldIsFocused: Bool
-    
     var body: some View {
         VStack {
             Text("Meme Editor")
                 .fontWeight(.bold)
                 .font(.title)
+                .padding()
             
             Group {
-                TextField(viewModel.viewState == .login ? "帳號" : "Email", text: $account)
-                    .padding(.horizontal, 30)
-                    .padding(.top, 20)
-                    .focused($accountTextFieldIsFocused)
-                
-                Divider()
-                    .frame(height: 1)
-                    .padding(.horizontal, 30)
-            }
-            
-            Group {
-                TextField("密碼", text: $password)
-                    .padding(.horizontal, 30)
-                    .padding(.top, 20)
-                    .focused($passordTextFieldIsFocused)
-                
-                Divider()
-                    .frame(height: 1)
-                    .padding(.horizontal, 30)
-            }
-            
-            
-            if viewModel.viewState == .signin {
-                Group {
-                    TextField("重新輸入密碼", text: $checkPassword)
-                        .padding(.horizontal, 30)
-                        .padding(.top, 20)
-                        .focused($passordTextFieldIsFocused)
+                switch viewModel.viewState {
+                case .login:
+                    TextFieldWithUnderLine("帳號", text: $viewModel.email, keyboardType: .emailAddress)
+                    SecureInputView("密碼", text: $viewModel.password)
                     
-                    Divider()
-                        .frame(height: 1)
-                        .padding(.horizontal, 30)
+                case .signin:
+                    TextFieldWithUnderLine("Email", text: $viewModel.email, keyboardType: .emailAddress)
+                    SecureInputView("密碼", text: $viewModel.password)
+                    SecureInputView("重新輸入密碼", text: $viewModel.checkPassword)
+                    
+                case .resetPassword:
+                    TextFieldWithUnderLine("Email", text: $viewModel.email, keyboardType: .emailAddress)
                 }
             }
             
@@ -68,7 +43,7 @@ struct LoginView: View {
                 case .signin:
                     Text("註冊帳號")
                 case .resetPassword:
-                    Text("")
+                    Text("取得驗證信")
                 }
             }
             .frame(minWidth: 0, maxWidth: .infinity)
@@ -84,7 +59,7 @@ struct LoginView: View {
                 if viewModel.viewState == .login {
                     Group {
                         Button("忘記密碼") {
-                            
+                            viewModel.viewState = .resetPassword
                         }
                         .foregroundColor(Color("BlueGreen"))
                         Spacer()
@@ -92,11 +67,11 @@ struct LoginView: View {
                 }
                 
                 Button {
-                    if viewModel.viewState == .login {
-                        viewModel.viewState = .signin
+                    if viewModel.viewState == .signin || viewModel.viewState == .resetPassword {
+                        viewModel.viewState = .login
                     }
                     else {
-                        viewModel.viewState = .login
+                        viewModel.viewState = .signin
                     }
                 } label: {
                     if viewModel.viewState == .login {
@@ -120,5 +95,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .previewInterfaceOrientation(.portrait)
     }
 }
