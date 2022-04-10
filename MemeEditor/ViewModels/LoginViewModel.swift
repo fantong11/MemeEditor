@@ -10,7 +10,7 @@ import FirebaseAuth
 
 enum LoginState {
     case login
-    case signin
+    case signIn
     case resetPassword
 }
 
@@ -41,7 +41,7 @@ class LoginViewModel: ObservableObject {
         }
     }
     
-    func signin() {
+    func signIn() {
         print(email, password)
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if error != nil {

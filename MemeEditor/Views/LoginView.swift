@@ -24,7 +24,7 @@ struct LoginView: View {
                         TextFieldWithUnderLine("帳號", text: $viewModel.email, keyboardType: .emailAddress)
                         SecureInputView("密碼", text: $viewModel.password)
                         
-                    case .signin:
+                    case .signIn:
                         TextFieldWithUnderLine("Email", text: $viewModel.email, keyboardType: .emailAddress)
                         SecureInputView("密碼", text: $viewModel.password)
                         SecureInputView("重新輸入密碼", text: $viewModel.checkPassword)
@@ -38,8 +38,8 @@ struct LoginView: View {
                     switch viewModel.viewState {
                     case .login:
                         viewModel.login()
-                    case .signin:
-                        viewModel.signin()
+                    case .signIn:
+                        viewModel.signIn()
                     case .resetPassword:
                         viewModel.resetPassword()
                     }
@@ -49,7 +49,7 @@ struct LoginView: View {
                     switch viewModel.viewState {
                     case .login:
                         Text("登入")
-                    case .signin:
+                    case .signIn:
                         Text("註冊帳號")
                     case .resetPassword:
                         Text("取得驗證信")
@@ -76,11 +76,11 @@ struct LoginView: View {
                     }
                     
                     Button {
-                        if viewModel.viewState == .signin || viewModel.viewState == .resetPassword {
+                        if viewModel.viewState == .signIn || viewModel.viewState == .resetPassword {
                             viewModel.viewState = .login
                         }
                         else {
-                            viewModel.viewState = .signin
+                            viewModel.viewState = .signIn
                         }
                     } label: {
                         if viewModel.viewState == .login {
