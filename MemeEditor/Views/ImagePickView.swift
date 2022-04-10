@@ -11,7 +11,7 @@ struct ImagePickView: View {
     // image for ui
     @State private var image: Image?
     @State private var isShowingEditView = false
-    @State private var isShowinngLoginView = false
+    @State private var isShowingLoginView = false
     @ObservedObject var viewModel = ViewModel()
     
     
@@ -43,13 +43,13 @@ struct ImagePickView: View {
             .sheet(isPresented: $viewModel.showingImagePicker) {
                 ImagePicker(image: $viewModel.inputImage)
             }
-            .sheet(isPresented: $isShowinngLoginView) {
+            .sheet(isPresented: $isShowingLoginView) {
                 LoginView()
             }
             .toolbar {
                 ToolbarItem {
                     Button {
-                        isShowinngLoginView = true
+                        isShowingLoginView = true
                     } label: {
                         Image(systemName: "person.crop.circle")
                     }
