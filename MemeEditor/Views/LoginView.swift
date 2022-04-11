@@ -20,14 +20,14 @@ struct LoginView: View {
                 
                 Group {
                     switch viewModel.viewState {
-                    case .login:
+                    case .signIn:
                         TextFieldWithUnderLine("帳號", text: $viewModel.email, keyboardType: .emailAddress)
                         SecureInputView("密碼", text: $viewModel.password)
                         
-                    case .signin:
+                    case .signUp:
                         TextFieldWithUnderLine("Email", text: $viewModel.email, keyboardType: .emailAddress)
                         SecureInputView("密碼", text: $viewModel.password)
-                        SecureInputView("重新輸入密碼", text: $viewModel.checkPassword)
+                        SecureInputView("重新輸入密碼", text: $viewModel.comfirmPassword)
                         
                     case .resetPassword:
                         TextFieldWithUnderLine("Email", text: $viewModel.email, keyboardType: .emailAddress)
@@ -36,10 +36,10 @@ struct LoginView: View {
                 
                 Button {
                     switch viewModel.viewState {
-                    case .login:
-                        viewModel.login()
-                    case .signin:
-                        viewModel.signin()
+                    case .signIn:
+                        viewModel.signIn()
+                    case .signUp:
+                        viewModel.signUp()
                     case .resetPassword:
                         viewModel.resetPassword()
                     }
@@ -47,9 +47,9 @@ struct LoginView: View {
                 } label: {
                     
                     switch viewModel.viewState {
-                    case .login:
+                    case .signIn:
                         Text("登入")
-                    case .signin:
+                    case .signUp:
                         Text("註冊帳號")
                     case .resetPassword:
                         Text("取得驗證信")
@@ -65,7 +65,7 @@ struct LoginView: View {
                 HStack {
                     Spacer()
                     
-                    if viewModel.viewState == .login {
+                    if viewModel.viewState == .signIn {
                         Group {
                             Button("忘記密碼") {
                                 viewModel.viewState = .resetPassword
@@ -76,14 +76,14 @@ struct LoginView: View {
                     }
                     
                     Button {
-                        if viewModel.viewState == .signin || viewModel.viewState == .resetPassword {
-                            viewModel.viewState = .login
+                        if viewModel.viewState == .signUp || viewModel.viewState == .resetPassword {
+                            viewModel.viewState = .signIn
                         }
                         else {
-                            viewModel.viewState = .signin
+                            viewModel.viewState = .signUp
                         }
                     } label: {
-                        if viewModel.viewState == .login {
+                        if viewModel.viewState == .signIn {
                             Text("註冊帳號")
                         }
                         else {
