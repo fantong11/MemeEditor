@@ -85,7 +85,7 @@ struct ImageEditView: View {
                         Button {
                             viewModel.textBoxes[viewModel.currentIndex].isBold.toggle()
                         } label: {
-                            Text(viewModel.textBoxes[viewModel.currentIndex].isBold ? "Noraml" : "Bold")
+                            Text(viewModel.textBoxes[viewModel.currentIndex].isBold ? "Normal" : "Bold")
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                         }
