@@ -9,7 +9,7 @@ import SwiftUI
 import PencilKit
 
 struct ImageEditView: View {
-    @ObservedObject var viewModel = ViewModel()
+    @StateObject var viewModel = ViewModel()
     @Binding var baseImage: UIImage?
     @FocusState private var isTextBoxFocused: Bool
     
@@ -23,97 +23,26 @@ struct ImageEditView: View {
             }
             
             ForEach(viewModel.textBoxes) { textBox in
-                Text(viewModel.textBoxes[viewModel.currentIndex].id == textBox.id && viewModel.addingTextBox ? "" : textBox.text)
-                    .font(.system(size: 30))
-                    .fontWeight(textBox.isBold ? .bold : .regular)
-                    .foregroundColor(textBox.textColor)
-                    .offset(textBox.offset)
-                    .gesture(DragGesture().onChanged({ value in
-                        let current = value.translation
-                        let last = textBox.lastOffset
-                        let newTranslation = CGSize(width: last.width + current.width, height: last.height + current.height)
-                        viewModel.textBoxes[viewModel.getIndex(of: textBox)].offset = newTranslation
-                    }).onEnded({ value in
-                        viewModel.textBoxes[viewModel.getIndex(of: textBox)].lastOffset = value.translation
-                    }))
-                    .onLongPressGesture {
-                        // Edit text box
-                        viewModel.toolPicker.setVisible(false, forFirstResponder: viewModel.canvas)
-                        viewModel.canvas.resignFirstResponder()
-                        viewModel.currentIndex = viewModel.getIndex(of: textBox)
-                        withAnimation {
-                            viewModel.addingTextBox = true
-                        }
-                    }
+                TextBoxView(viewModel: viewModel, textBox: textBox)
             }
             
             if viewModel.addingTextBox {
-                Color.black
-                    .opacity(0.5)
-                    .ignoresSafeArea()
-                TextField("Type Here", text: $viewModel.textBoxes[viewModel.currentIndex].text)
-                    .font(.system(size: 35, weight: viewModel.textBoxes[viewModel.currentIndex].isBold ? .bold : .regular))
-                    .foregroundColor(viewModel.textBoxes[viewModel.currentIndex].textColor)
-                    .padding()
-                    .preferredColorScheme(.dark)
-                    .focused($isTextBoxFocused)
-                HStack {
-                    Button {
-                        viewModel.textBoxes[viewModel.currentIndex].isAdded = true
-                        viewModel.toolPicker.setVisible(true, forFirstResponder: viewModel.canvas)
-                        viewModel.canvas.becomeFirstResponder()
-                        withAnimation {
-                            viewModel.addingTextBox = false
-                        }
-                    } label: {
-                        Text("Add")
-                            .fontWeight(.bold)
-                    }
-                    .foregroundColor(.white)
-                    
-                    Spacer()
-                    
-                    Button(action: viewModel.cancelTextBoxView) {
-                        Image(systemName: "xmark")
-                    }
-                    .foregroundColor(.white)
-                }
-                .overlay {
-                    HStack(spacing: 15) {
-                        ColorPicker("Set the text color", selection: $viewModel.textBoxes[viewModel.currentIndex].textColor)
-                        .labelsHidden()
-                        Button {
-                            viewModel.textBoxes[viewModel.currentIndex].isBold.toggle()
-                        } label: {
-                            Text(viewModel.textBoxes[viewModel.currentIndex].isBold ? "Normal" : "Bold")
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                        }
-                    }
-                }
-                .padding()
-                .frame(maxHeight: .infinity, alignment: .top)
+                AddTextBoxView(viewModel: viewModel, isTextBoxFocused: _isTextBoxFocused)
             }
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Save", action: viewModel.saveImage)
+                    .disabled(viewModel.addingTextBox)
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    // Create a new text box
-                    viewModel.textBoxes.append(TextBox())
-                    viewModel.currentIndex = viewModel.textBoxes.count - 1
-                    withAnimation {
-                        viewModel.addingTextBox.toggle()
-                    }
-                    // Close the tool picker
-                    viewModel.toolPicker.setVisible(false, forFirstResponder: viewModel.canvas)
-                    viewModel.canvas.resignFirstResponder()
+                    viewModel.createTextBox()
                     isTextBoxFocused.toggle()
                 } label: {
                     Image(systemName: "plus")
                 }
+                    .disabled(viewModel.addingTextBox)
             }
         }
         .alert(viewModel.alertTitle, isPresented: $viewModel.showingAlert) {
@@ -130,6 +59,90 @@ struct ImageEditView_Previews: PreviewProvider {
     }
 }
 
+
+struct TextBoxView: View {
+    @ObservedObject var viewModel: ImageEditView.ViewModel
+    let textBox:TextBox
+    var body: some View {
+        // check array empty state first to prevent  "Fatal error: Index out of range"
+        Text(!viewModel.textBoxes.isEmpty && viewModel.textBoxes[viewModel.currentIndex].id == textBox.id && viewModel.addingTextBox ? "" : textBox.text)
+            .font(.system(size: 30))
+            .fontWeight(textBox.isBold ? .bold : .regular)
+            .foregroundColor(textBox.textColor)
+            .offset(textBox.offset)
+            .gesture(DragGesture().onChanged({ value in
+                let current = value.translation
+                let last = textBox.lastOffset
+                let newTranslation = CGSize(width: last.width + current.width, height: last.height + current.height)
+                viewModel.textBoxes[viewModel.getIndex(of: textBox)].offset = newTranslation
+            }).onEnded({ value in
+                viewModel.textBoxes[viewModel.getIndex(of: textBox)].lastOffset = value.translation
+            }))
+            .onLongPressGesture {
+                // Edit text box
+                viewModel.toolPicker.setVisible(false, forFirstResponder: viewModel.canvas)
+                viewModel.canvas.resignFirstResponder()
+                viewModel.currentIndex = viewModel.getIndex(of: textBox)
+                withAnimation {
+                    viewModel.addingTextBox = true
+                }
+            }
+    }
+}
+
+struct AddTextBoxView: View {
+    @ObservedObject var viewModel: ImageEditView.ViewModel
+    @FocusState var isTextBoxFocused: Bool
+    
+    var body: some View {
+        Color.black
+            .opacity(0.5)
+            .ignoresSafeArea()
+//        let _ = print("\(viewModel.currentIndex), \(viewModel.textBoxes.count)")
+        if !viewModel.textBoxes.isEmpty {
+            TextField("Type Here", text: $viewModel.textBoxes[viewModel.currentIndex].text)
+                .font(.system(size: 35, weight: viewModel.textBoxes[viewModel.currentIndex].isBold ? .bold : .regular))
+                .foregroundColor(viewModel.textBoxes[viewModel.currentIndex].textColor)
+                .padding()
+                .preferredColorScheme(.dark)
+                .focused($isTextBoxFocused)
+            HStack {
+                Button {
+                    viewModel.textBoxes[viewModel.currentIndex].isAdded = true
+                    viewModel.toolPicker.setVisible(true, forFirstResponder: viewModel.canvas)
+                    viewModel.canvas.becomeFirstResponder()
+                    viewModel.addingTextBox = false
+                } label: {
+                    Text("Add")
+                        .fontWeight(.bold)
+                }
+                .foregroundColor(.white)
+                
+                Spacer()
+                
+                Button(action: viewModel.cancelTextBoxView) {
+                    Image(systemName: "xmark")
+                }
+                .foregroundColor(.white)
+            }
+            .overlay {
+                HStack(spacing: 15) {
+                    ColorPicker("Set the text color", selection: $viewModel.textBoxes[viewModel.currentIndex].textColor)
+                        .labelsHidden()
+                    Button {
+                        viewModel.textBoxes[viewModel.currentIndex].isBold.toggle()
+                    } label: {
+                        Text(viewModel.textBoxes[viewModel.currentIndex].isBold ? "Normal" : "Bold")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                    }
+                }
+            }
+            .padding()
+            .frame(maxHeight: .infinity, alignment: .top)
+        }
+    }
+}
 
 struct CanvasView: UIViewRepresentable {
     

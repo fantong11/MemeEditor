@@ -25,6 +25,19 @@ extension ImageEditView {
         @Published var alertMessage = ""
         
         
+        func createTextBox() {
+            guard !addingTextBox else { return }
+            // Create a new text box
+            textBoxes.append(TextBox())
+            currentIndex = textBoxes.count - 1
+            withAnimation {
+                addingTextBox.toggle()
+            }
+            // Close the tool picker
+            toolPicker.setVisible(false, forFirstResponder: canvas)
+            canvas.resignFirstResponder()
+        }
+        
         
         func cancelTextBoxView() {
             // show tool picker
@@ -39,6 +52,7 @@ extension ImageEditView {
             } else {
                 textBoxes.remove(at: currentIndex)
             }
+            currentIndex = 0
         }
         func getIndex(of textBox: TextBox) -> Int {
             textBoxes.firstIndex { box -> Bool in
