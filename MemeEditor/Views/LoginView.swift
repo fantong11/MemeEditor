@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var viewModel = LoginViewModel()
+    @StateObject var viewModel: LoginViewModel
     
     var body: some View {
         NavigationView {
@@ -19,29 +19,37 @@ struct LoginView: View {
                     .padding()
                 
                 Group {
-                    switch viewModel.viewState {
-                    case .login:
-                        TextFieldWithUnderLine("帳號", text: $viewModel.email, keyboardType: .emailAddress)
-                        SecureInputView("密碼", text: $viewModel.password)
+                    switch viewModel.state.viewState {
+                    case .signIn:
+                        TextFieldWithUnderLine("帳號", text: $viewModel.state.email, keyboardType: .emailAddress)
+                        SecureInputView("密碼", text: $viewModel.state.password)
                         
-                    case .signin:
-                        TextFieldWithUnderLine("Email", text: $viewModel.email, keyboardType: .emailAddress)
-                        SecureInputView("密碼", text: $viewModel.password)
-                        SecureInputView("重新輸入密碼", text: $viewModel.checkPassword)
+                    case .signUp:
+                        TextFieldWithUnderLine("Email", text: $viewModel.state.email, keyboardType: .emailAddress)
+                        SecureInputView("密碼", text: $viewModel.state.password)
+                        SecureInputView("重新輸入密碼", text: $viewModel.state.comfirmPassword)
                         
                     case .resetPassword:
-                        TextFieldWithUnderLine("Email", text: $viewModel.email, keyboardType: .emailAddress)
+                        TextFieldWithUnderLine("Email", text: $viewModel.state.email, keyboardType: .emailAddress)
                     }
                 }
                 
                 Button {
+                    switch viewModel.state.viewState {
+                    case .signIn:
+                        viewModel.signIn()
+                    case .signUp:
+                        viewModel.signUp()
+                    case .resetPassword:
+                        viewModel.resetPassword()
+                    }
                     
                 } label: {
                     
-                    switch viewModel.viewState {
-                    case .login:
+                    switch viewModel.state.viewState {
+                    case .signIn:
                         Text("登入")
-                    case .signin:
+                    case .signUp:
                         Text("註冊帳號")
                     case .resetPassword:
                         Text("取得驗證信")
@@ -57,10 +65,11 @@ struct LoginView: View {
                 HStack {
                     Spacer()
                     
-                    if viewModel.viewState == .login {
+                    if viewModel.state.viewState == .signIn {
                         Group {
                             Button("忘記密碼") {
-                                viewModel.viewState = .resetPassword
+//                                viewModel.setViewState(viewState: .resetPassword)
+                                viewModel.state.viewState = .resetPassword
                             }
                             .foregroundColor(Color("BlueGreen"))
                             Spacer()
@@ -68,14 +77,14 @@ struct LoginView: View {
                     }
                     
                     Button {
-                        if viewModel.viewState == .signin || viewModel.viewState == .resetPassword {
-                            viewModel.viewState = .login
+                        if viewModel.state.viewState == .signUp || viewModel.state.viewState == .resetPassword {
+                            viewModel.state.viewState = .signIn
                         }
                         else {
-                            viewModel.viewState = .signin
+                            viewModel.state.viewState = .signUp
                         }
                     } label: {
-                        if viewModel.viewState == .login {
+                        if viewModel.state.viewState == .signIn {
                             Text("註冊帳號")
                         }
                         else {
@@ -89,7 +98,7 @@ struct LoginView: View {
                 .padding()
                 Spacer()
             }
-            .animation(.easeIn, value: viewModel.viewState)
+            .animation(.easeIn, value: viewModel.state.viewState)
             .toolbar {
                 ToolbarItem {
                     Button {
@@ -107,7 +116,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: LoginViewModel(initialState: LoginViewState()))
             .previewInterfaceOrientation(.portrait)
     }
 }

@@ -6,20 +6,22 @@
 //
 
 import Foundation
+import FirebaseAuth
 
-enum LoginState {
-    case login
-    case signin
-    case resetPassword
-}
-
-class LoginViewModel: ObservableObject {
-    @Published var viewState: LoginState = .login
-    @Published var email: String = ""
-    @Published var password: String = ""
-    @Published var checkPassword: String = ""
+final class LoginViewModel: StateBindingViewModel<LoginViewState> {
     
-    init() {
-        
+    let firebaseService: FirebaseService = FirebaseService()
+
+    func signIn() {
+        firebaseService.signIn(email: state.email, password: state.password)
     }
+    
+    func signUp() {
+        firebaseService.signUp(email: state.email, password: state.password)
+    }
+    
+    func resetPassword() {
+        print(state.email)
+    }
+    
 }
