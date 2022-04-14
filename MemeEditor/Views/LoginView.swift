@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var viewModel = LoginViewModel()
+    @StateObject var viewModel: LoginViewModel
     
     var body: some View {
         NavigationView {
@@ -19,23 +19,23 @@ struct LoginView: View {
                     .padding()
                 
                 Group {
-                    switch viewModel.viewState {
+                    switch viewModel.state.viewState {
                     case .signIn:
-                        TextFieldWithUnderLine("帳號", text: $viewModel.email, keyboardType: .emailAddress)
-                        SecureInputView("密碼", text: $viewModel.password)
+                        TextFieldWithUnderLine("帳號", text: $viewModel.state.email, keyboardType: .emailAddress)
+                        SecureInputView("密碼", text: $viewModel.state.password)
                         
                     case .signUp:
-                        TextFieldWithUnderLine("Email", text: $viewModel.email, keyboardType: .emailAddress)
-                        SecureInputView("密碼", text: $viewModel.password)
-                        SecureInputView("重新輸入密碼", text: $viewModel.comfirmPassword)
+                        TextFieldWithUnderLine("Email", text: $viewModel.state.email, keyboardType: .emailAddress)
+                        SecureInputView("密碼", text: $viewModel.state.password)
+                        SecureInputView("重新輸入密碼", text: $viewModel.state.comfirmPassword)
                         
                     case .resetPassword:
-                        TextFieldWithUnderLine("Email", text: $viewModel.email, keyboardType: .emailAddress)
+                        TextFieldWithUnderLine("Email", text: $viewModel.state.email, keyboardType: .emailAddress)
                     }
                 }
                 
                 Button {
-                    switch viewModel.viewState {
+                    switch viewModel.state.viewState {
                     case .signIn:
                         viewModel.signIn()
                     case .signUp:
@@ -46,7 +46,7 @@ struct LoginView: View {
                     
                 } label: {
                     
-                    switch viewModel.viewState {
+                    switch viewModel.state.viewState {
                     case .signIn:
                         Text("登入")
                     case .signUp:
@@ -65,10 +65,11 @@ struct LoginView: View {
                 HStack {
                     Spacer()
                     
-                    if viewModel.viewState == .signIn {
+                    if viewModel.state.viewState == .signIn {
                         Group {
                             Button("忘記密碼") {
-                                viewModel.viewState = .resetPassword
+//                                viewModel.setViewState(viewState: .resetPassword)
+                                viewModel.state.viewState = .resetPassword
                             }
                             .foregroundColor(Color("BlueGreen"))
                             Spacer()
@@ -76,14 +77,14 @@ struct LoginView: View {
                     }
                     
                     Button {
-                        if viewModel.viewState == .signUp || viewModel.viewState == .resetPassword {
-                            viewModel.viewState = .signIn
+                        if viewModel.state.viewState == .signUp || viewModel.state.viewState == .resetPassword {
+                            viewModel.state.viewState = .signIn
                         }
                         else {
-                            viewModel.viewState = .signUp
+                            viewModel.state.viewState = .signUp
                         }
                     } label: {
-                        if viewModel.viewState == .signIn {
+                        if viewModel.state.viewState == .signIn {
                             Text("註冊帳號")
                         }
                         else {
@@ -97,7 +98,7 @@ struct LoginView: View {
                 .padding()
                 Spacer()
             }
-            .animation(.easeIn, value: viewModel.viewState)
+            .animation(.easeIn, value: viewModel.state.viewState)
             .toolbar {
                 ToolbarItem {
                     Button {
@@ -115,7 +116,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: LoginViewModel(initialState: LoginViewState()))
             .previewInterfaceOrientation(.portrait)
     }
 }

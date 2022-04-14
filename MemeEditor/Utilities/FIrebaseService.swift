@@ -28,6 +28,7 @@ class FirebaseService {
                 print("Email is not verified.")
                 return
             }
+            print("Login Success!")
         }
     }
     

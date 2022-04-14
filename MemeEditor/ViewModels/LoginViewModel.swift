@@ -8,28 +8,20 @@
 import Foundation
 import FirebaseAuth
 
-class LoginViewModel: ObservableObject {
-//    @Published var state: LoginViewState
-    @Published var viewState: LoginState = .signIn
-    @Published var email: String = ""
-    @Published var password: String = ""
-    @Published var comfirmPassword: String = ""
-    var firebaseService = FirebaseService()
+final class LoginViewModel: StateBindingViewModel<LoginViewState> {
     
-//    init(initState: LoginViewState) {
-//        self.state = initState
-//    }
-    
+    let firebaseService: FirebaseService = FirebaseService()
+
     func signIn() {
-        firebaseService.signIn(email: email, password: password)
+        firebaseService.signIn(email: state.email, password: state.password)
     }
     
     func signUp() {
-        firebaseService.signUp(email: email, password: password)
+        firebaseService.signUp(email: state.email, password: state.password)
     }
     
     func resetPassword() {
-        print(email)
+        print(state.email)
     }
     
 }

@@ -21,13 +21,17 @@
 		C3020E4A27D38D830090894E /* MemeEditorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E4927D38D830090894E /* MemeEditorUITests.swift */; };
 		C3020E4C27D38D830090894E /* MemeEditorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */; };
 		C337B94927DA352100D23028 /* ImagePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337B94827DA352100D23028 /* ImagePickerTests.swift */; };
+		C33D66F5280882430031BB9B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D66F4280882430031BB9B /* ContentViewModel.swift */; };
+		C35600EB280861E500F7AFB2 /* StateBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */; };
+		C35600ED280871B500F7AFB2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35600EC280871B500F7AFB2 /* SettingView.swift */; };
 		C3A5599A280355980016F50B /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A55999280355980016F50B /* ExampleView.swift */; };
+		C3A5599C280415150016F50B /* ExampleView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5599B280415150016F50B /* ExampleView2.swift */; };
 		C3DFC7A527D9C482001A2D97 /* ImagePickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */; };
 		C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773B27E663AF00CBFFE9 /* ViewExtension.swift */; };
 		C3E8773E27E6DF7500CBFFE9 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */; };
 		C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */; };
 		C3E90A5F27FAEE7F00CF1113 /* FIrebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E90A5E27FAEE7F00CF1113 /* FIrebaseService.swift */; };
-		C3E90A6127FAF1CB00CF1113 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E90A6027FAF1CB00CF1113 /* User.swift */; };
+		C3E90A6127FAF1CB00CF1113 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E90A6027FAF1CB00CF1113 /* LoginViewState.swift */; };
 		C3F0972E27E3619400CA7D02 /* UserDefaultInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */; };
 		C3F0973227E3677A00CA7D02 /* UserDefaultInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0973127E3677A00CA7D02 /* UserDefaultInfoTests.swift */; };
 		C3F1249827E5B5B2009494BD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C3F1249727E5B5B2009494BD /* FirebaseAuth */; };
@@ -74,13 +78,17 @@
 		C3020E4927D38D830090894E /* MemeEditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorUITests.swift; sourceTree = "<group>"; };
 		C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C337B94827DA352100D23028 /* ImagePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerTests.swift; sourceTree = "<group>"; };
+		C33D66F4280882430031BB9B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBindingViewModel.swift; sourceTree = "<group>"; };
+		C35600EC280871B500F7AFB2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		C3A55999280355980016F50B /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		C3A5599B280415150016F50B /* ExampleView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView2.swift; sourceTree = "<group>"; };
 		C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickUITests.swift; sourceTree = "<group>"; };
 		C3E8773B27E663AF00CBFFE9 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
 		C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithUnderLine.swift; sourceTree = "<group>"; };
 		C3E90A5E27FAEE7F00CF1113 /* FIrebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseService.swift; sourceTree = "<group>"; };
-		C3E90A6027FAF1CB00CF1113 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C3E90A6027FAF1CB00CF1113 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
 		C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultInfo.swift; sourceTree = "<group>"; };
 		C3F0973127E3677A00CA7D02 /* UserDefaultInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultInfoTests.swift; sourceTree = "<group>"; };
 		C3F1249F27E5B742009494BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -194,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				11FCEB6327E5B2310013412D /* TextBox.swift */,
-				C3E90A6027FAF1CB00CF1113 /* User.swift */,
+				C3E90A6027FAF1CB00CF1113 /* LoginViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +213,8 @@
 				C3F124A827E5D991009494BD /* LoginViewModel.swift */,
 				11FCEB6B27E5F2A00013412D /* ImagePickViewModel.swift */,
 				11FCEB6127E591EE0013412D /* ImageEditViewModel.swift */,
+				C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */,
+				C33D66F4280882430031BB9B /* ContentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -217,6 +227,8 @@
 				11FCEB6727E5F27F0013412D /* ImagePickView.swift */,
 				11E03E7427E480540048CFC0 /* ImageEditView.swift */,
 				C3A55999280355980016F50B /* ExampleView.swift */,
+				C3A5599B280415150016F50B /* ExampleView2.swift */,
+				C35600EC280871B500F7AFB2 /* SettingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,20 +391,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A5599C280415150016F50B /* ExampleView2.swift in Sources */,
+				C35600ED280871B500F7AFB2 /* SettingView.swift in Sources */,
 				C3E8773E27E6DF7500CBFFE9 /* SecureInputView.swift in Sources */,
 				C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */,
 				11FCEB6227E591EE0013412D /* ImageEditViewModel.swift in Sources */,
 				11FCEB6427E5B2310013412D /* TextBox.swift in Sources */,
-				C3E90A6127FAF1CB00CF1113 /* User.swift in Sources */,
+				C3E90A6127FAF1CB00CF1113 /* LoginViewState.swift in Sources */,
 				11FCEB6827E5F2800013412D /* ImagePickView.swift in Sources */,
 				11E03E7527E480540048CFC0 /* ImageEditView.swift in Sources */,
 				C3F0972E27E3619400CA7D02 /* UserDefaultInfo.swift in Sources */,
+				C35600EB280861E500F7AFB2 /* StateBindingViewModel.swift in Sources */,
 				C3F124A727E5C966009494BD /* LoginView.swift in Sources */,
 				C3E90A5F27FAEE7F00CF1113 /* FIrebaseService.swift in Sources */,
 				C3F124A927E5D991009494BD /* LoginViewModel.swift in Sources */,
 				11FCEB6627E5F2790013412D /* ContentView.swift in Sources */,
 				11FCEB6A27E5F2900013412D /* ImagePicker.swift in Sources */,
 				C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */,
+				C33D66F5280882430031BB9B /* ContentViewModel.swift in Sources */,
 				C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */,
 				11FCEB6C27E5F2A10013412D /* ImagePickViewModel.swift in Sources */,
 				C3A5599A280355980016F50B /* ExampleView.swift in Sources */,

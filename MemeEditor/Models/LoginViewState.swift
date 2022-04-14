@@ -13,10 +13,11 @@ enum LoginState {
     case resetPassword
 }
 
-struct LoginViewState {
-    var loginState: LoginState = .signIn
+struct LoginViewState: Equatable {
+    var viewState: LoginState = .signIn
     var username: String = ""
     var email: String = ""
     var password: String = ""
     var comfirmPassword: String = ""
+    var passwordError: String?
 }
