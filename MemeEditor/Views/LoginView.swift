@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: LoginViewModel
     
     var body: some View {
@@ -102,7 +103,7 @@ struct LoginView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Image(systemName: "multiply")
                     }
