@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LoginView: View {
-    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: LoginViewModel
     
     var body: some View {
@@ -69,7 +68,6 @@ struct LoginView: View {
                     if viewModel.state.viewState == .signIn {
                         Group {
                             Button("忘記密碼") {
-//                                viewModel.setViewState(viewState: .resetPassword)
                                 viewModel.state.viewState = .resetPassword
                             }
                             .foregroundColor(Color("BlueGreen"))
@@ -103,11 +101,11 @@ struct LoginView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        presentationMode.wrappedValue.dismiss()
+                        viewModel.isPresented = false
                     } label: {
                         Image(systemName: "multiply")
                     }
-
+                    
                 }
             }
         }
@@ -117,7 +115,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: LoginViewModel(initialState: LoginViewState()))
-            .previewInterfaceOrientation(.portrait)
+        LoginView(viewModel: LoginViewModel(initialState: LoginViewState(), isPresented: .constant(true)))
     }
 }

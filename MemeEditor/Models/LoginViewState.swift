@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 enum LoginState {
     case signIn
@@ -19,5 +20,5 @@ struct LoginViewState: Equatable {
     var email: String = ""
     var password: String = ""
     var comfirmPassword: String = ""
-    var passwordError: String?
+    var loginError: AuthErrorCode?
 }

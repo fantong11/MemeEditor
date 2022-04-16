@@ -17,18 +17,25 @@ class FirebaseService {
         
     }
     
-    func signIn(email: String, password: String) {
+    func getCurrentUser() -> User? {
+        return firebaseAuth.currentUser
+    }
+    
+    func signIn(email: String, password: String, result: @escaping (_ error: AuthErrorCode?, _ data: String?) -> Void) {
         firebaseAuth.signIn(withEmail: email, password: password) { authResult, error in
-            if error != nil {
-                print(error!)
-                return
+            if let error = error {
+                if let errCode = AuthErrorCode(rawValue: error._code) {
+                    result(errCode, nil)
+                    return
+                }
             }
-            
-            if !authResult!.user.isEmailVerified {
-                print("Email is not verified.")
-                return
+            if let authResult = authResult {
+                if !authResult.user.isEmailVerified {
+                    result(nil, "Email is not verified.")
+                    return
+                }
             }
-            print("Login Success!")
+            result(nil, "login success")
         }
     }
     

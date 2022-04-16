@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingView: View {
     var body: some View {
-        LoginView(viewModel: .init(initialState: LoginViewState()))
+        Text("1234")
     }
 }
 

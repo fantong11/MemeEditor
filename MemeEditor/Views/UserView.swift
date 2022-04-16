@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct UserView: View {
     @ObservedObject var viewModel: UserViewModel
@@ -13,21 +14,33 @@ struct UserView: View {
     var body: some View {
         VStack {
             HStack {
-                Spacer()
-                Button {
-                    viewModel.showLoginView = true
-                    viewModel.signInOrSignUp = .signUp
-                } label: {
-                    Text("註冊")
+                
+                if let user = viewModel.currentUser {
+                    Text(user.email!)
+                    Button {
+                        viewModel.signOut()
+                    } label: {
+                        Text("登出")
+                    }
                 }
-                Spacer()
-                Button {
-                    viewModel.showLoginView = true
-                    viewModel.signInOrSignUp = .signIn
-                } label: {
-                    Text("登入")
+                else {
+                    Spacer()
+                    Button {
+                        viewModel.showLoginView = true
+                        viewModel.signInOrSignUp = .signUp
+                    } label: {
+                        Text("註冊")
+                    }
+                    Spacer()
+                    Button {
+                        viewModel.showLoginView = true
+                        viewModel.signInOrSignUp = .signIn
+                    } label: {
+                        Text("登入")
+                    }
+                    Spacer()
                 }
-                Spacer()
+                
             }
             .padding()
             Spacer()
@@ -35,9 +48,9 @@ struct UserView: View {
         .sheet(isPresented: $viewModel.showLoginView) {
             switch viewModel.signInOrSignUp {
             case .signIn:
-                LoginView(viewModel: .init(initialState: LoginViewState(viewState: .signIn)))
+                LoginView(viewModel: .init(initialState: LoginViewState(viewState: .signIn), isPresented: $viewModel.showLoginView))
             case .signUp:
-                LoginView(viewModel: .init(initialState: LoginViewState(viewState: .signUp)))
+                LoginView(viewModel: .init(initialState: LoginViewState(viewState: .signUp), isPresented: $viewModel.showLoginView))
             }
             
         }
