@@ -20,6 +20,9 @@
 		C3020E4027D38D830090894E /* MemeEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E3F27D38D830090894E /* MemeEditorTests.swift */; };
 		C3020E4A27D38D830090894E /* MemeEditorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E4927D38D830090894E /* MemeEditorUITests.swift */; };
 		C3020E4C27D38D830090894E /* MemeEditorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */; };
+		C31BC7FD281FBF8900B733C4 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31BC7FC281FBF8900B733C4 /* CanvasView.swift */; };
+		C31BC7FF281FBFC500B733C4 /* AddTextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31BC7FE281FBFC500B733C4 /* AddTextBoxView.swift */; };
+		C31BC801281FC11F00B733C4 /* TextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31BC800281FC11F00B733C4 /* TextBoxView.swift */; };
 		C337B94927DA352100D23028 /* ImagePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337B94827DA352100D23028 /* ImagePickerTests.swift */; };
 		C33D66F5280882430031BB9B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D66F4280882430031BB9B /* ContentViewModel.swift */; };
 		C35600EB280861E500F7AFB2 /* StateBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */; };
@@ -77,6 +80,9 @@
 		C3020E4527D38D830090894E /* MemeEditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeEditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3020E4927D38D830090894E /* MemeEditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorUITests.swift; sourceTree = "<group>"; };
 		C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C31BC7FC281FBF8900B733C4 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		C31BC7FE281FBFC500B733C4 /* AddTextBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextBoxView.swift; sourceTree = "<group>"; };
+		C31BC800281FC11F00B733C4 /* TextBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBoxView.swift; sourceTree = "<group>"; };
 		C337B94827DA352100D23028 /* ImagePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerTests.swift; sourceTree = "<group>"; };
 		C33D66F4280882430031BB9B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBindingViewModel.swift; sourceTree = "<group>"; };
@@ -239,6 +245,9 @@
 				C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */,
 				C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */,
 				11FCEB6927E5F2900013412D /* ImagePicker.swift */,
+				C31BC7FC281FBF8900B733C4 /* CanvasView.swift */,
+				C31BC7FE281FBFC500B733C4 /* AddTextBoxView.swift */,
+				C31BC800281FC11F00B733C4 /* TextBoxView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -396,9 +405,11 @@
 				C3E8773E27E6DF7500CBFFE9 /* SecureInputView.swift in Sources */,
 				C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */,
 				11FCEB6227E591EE0013412D /* ImageEditViewModel.swift in Sources */,
+				C31BC801281FC11F00B733C4 /* TextBoxView.swift in Sources */,
 				11FCEB6427E5B2310013412D /* TextBox.swift in Sources */,
 				C3E90A6127FAF1CB00CF1113 /* LoginViewState.swift in Sources */,
 				11FCEB6827E5F2800013412D /* ImagePickView.swift in Sources */,
+				C31BC7FD281FBF8900B733C4 /* CanvasView.swift in Sources */,
 				11E03E7527E480540048CFC0 /* ImageEditView.swift in Sources */,
 				C3F0972E27E3619400CA7D02 /* UserDefaultInfo.swift in Sources */,
 				C35600EB280861E500F7AFB2 /* StateBindingViewModel.swift in Sources */,
@@ -410,6 +421,7 @@
 				C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */,
 				C33D66F5280882430031BB9B /* ContentViewModel.swift in Sources */,
 				C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */,
+				C31BC7FF281FBFC500B733C4 /* AddTextBoxView.swift in Sources */,
 				11FCEB6C27E5F2A10013412D /* ImagePickViewModel.swift in Sources */,
 				C3A5599A280355980016F50B /* ExampleView.swift in Sources */,
 			);
