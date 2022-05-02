@@ -26,6 +26,38 @@ struct ImageEditView: View {
                 TextBoxView(textBox: textBox)
             }
             
+            // feature select toolbar
+            VStack {
+                HStack {
+                    if !viewModel.isDrawing {
+                        Button("Drawing") {
+                            viewModel.startDrawing()
+                        }
+                        Button("Text") {
+                            viewModel.createTextBox()
+                            isTextBoxFocused.toggle()
+                        }
+                    }
+                    else {
+                        Button {
+                            viewModel.doneDrawing()
+                        } label: {
+                            Text("Done")
+                                .fontWeight(.bold)
+                        }
+                    }
+                }
+                .padding(8)
+                // .frame(maxWidth: .infinity, alignment: .center) // make width consistent
+                .foregroundColor(.white)
+                .background(Color.secondary)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .padding([.leading, .trailing])
+                
+                Spacer()
+            }
+            .opacity(viewModel.showingFeaturesToolBar ? 1 : 0)
+            
             if viewModel.addingTextBox {
                 AddTextBoxView(isTextBoxFocused: _isTextBoxFocused)
             }
@@ -33,15 +65,6 @@ struct ImageEditView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Save", action: viewModel.saveImage)
-                    .disabled(viewModel.addingTextBox)
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    viewModel.createTextBox()
-                    isTextBoxFocused.toggle()
-                } label: {
-                    Image(systemName: "plus")
-                }
                     .disabled(viewModel.addingTextBox)
             }
         }

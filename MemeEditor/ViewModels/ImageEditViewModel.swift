@@ -11,6 +11,7 @@ import PencilKit
 class ImageEditViewModel: ObservableObject {
     @Published var canvas = PKCanvasView()
     @Published var toolPicker = PKToolPicker()
+    @Published var isDrawing = false
     
     @Published var textBoxes = [TextBox]()
     @Published var addingTextBox = false
@@ -23,6 +24,25 @@ class ImageEditViewModel: ObservableObject {
     @Published var alertTitle = ""
     @Published var alertMessage = ""
     
+    var showingFeaturesToolBar: Bool {
+        return !addingTextBox
+    }
+    
+    func startDrawing() {
+        // show tool picker
+        toolPicker.setVisible(true, forFirstResponder: canvas)
+        canvas.becomeFirstResponder()
+        canvas.isUserInteractionEnabled = true
+        isDrawing = true
+    }
+    
+    func doneDrawing() {
+        // Close the tool picker
+        toolPicker.setVisible(false, forFirstResponder: canvas)
+        canvas.resignFirstResponder()
+        canvas.isUserInteractionEnabled = false
+        isDrawing = false
+    }
     
     func createTextBox() {
         guard !addingTextBox else { return }
@@ -32,17 +52,10 @@ class ImageEditViewModel: ObservableObject {
         withAnimation {
             addingTextBox.toggle()
         }
-        // Close the tool picker
-        toolPicker.setVisible(false, forFirstResponder: canvas)
-        canvas.resignFirstResponder()
     }
     
     
     func cancelTextBoxView() {
-        // show tool picker
-        toolPicker.setVisible(true, forFirstResponder: canvas)
-        canvas.becomeFirstResponder()
-        
         withAnimation {
             addingTextBox = false
         }

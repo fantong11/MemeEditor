@@ -13,15 +13,15 @@ struct ContentView: View {
             TabView {
                 ImagePickView().tabItem {
                     NavigationLink(destination: ImagePickView()) {
-                        Image(systemName: "car")
-                        Text("Trips")
+                        Image(systemName: "photo.artframe")
+                        Text("Meme")
 
                     }.tag(1)
                 }
                 SettingView().tabItem {
                     NavigationLink(destination: SettingView()) {
-                        Image(systemName: "car")
-                        Text("Trips")
+                        Image(systemName: "person.circle")
+                        Text("Account")
 
                     }.tag(2)
                 }
