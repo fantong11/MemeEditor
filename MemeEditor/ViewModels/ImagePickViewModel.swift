@@ -1,5 +1,5 @@
 //
-//  ImagePickVIewModel.swift
+//  ImagePickViewModel.swift
 //  MemeEditor
 //
 //  Created by 范桶 on 2022/3/10.
