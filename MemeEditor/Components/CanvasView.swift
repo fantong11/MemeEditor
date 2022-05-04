@@ -34,9 +34,10 @@ struct CanvasView: UIViewRepresentable {
             subView.sendSubviewToBack(imageView)
             
             // Show tool picker and make canvas aware of tool changes
-            toolPicker.setVisible(true, forFirstResponder: canvas)
+            toolPicker.setVisible(false, forFirstResponder: canvas)
             toolPicker.addObserver(canvas)
-            canvas.becomeFirstResponder()
+//            canvas.becomeFirstResponder()
+            canvas.isUserInteractionEnabled = false
         }
         return canvas
     }

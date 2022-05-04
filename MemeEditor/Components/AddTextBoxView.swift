@@ -26,8 +26,6 @@ struct AddTextBoxView: View {
             HStack {
                 Button {
                     viewModel.textBoxes[viewModel.currentIndex].isAdded = true
-                    viewModel.toolPicker.setVisible(true, forFirstResponder: viewModel.canvas)
-                    viewModel.canvas.becomeFirstResponder()
                     viewModel.addingTextBox = false
                 } label: {
                     Text("Add")
