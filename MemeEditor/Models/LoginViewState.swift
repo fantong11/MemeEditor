@@ -19,6 +19,6 @@ struct LoginViewState: Equatable {
     var username: String = ""
     var email: String = ""
     var password: String = ""
-    var comfirmPassword: String = ""
+    var confirmPassword: String = ""
     var loginError: AuthErrorCode?
 }
