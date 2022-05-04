@@ -13,16 +13,14 @@ struct ContentView: View {
             TabView {
                 ImagePickView().tabItem {
                     NavigationLink(destination: ImagePickView()) {
-                        Image(systemName: "photo.artframe")
-                        Text("Meme")
-
+                        Image(systemName: "house")
+                        Text("主頁")
                     }.tag(1)
                 }
-                SettingView().tabItem {
-                    NavigationLink(destination: SettingView()) {
-                        Image(systemName: "person.circle")
-                        Text("Account")
-
+                UserView(viewModel: .init()).tabItem {
+                    NavigationLink(destination: UserView(viewModel: .init())) {
+                        Image(systemName: "person")
+                        Text("我的")
                     }.tag(2)
                 }
             }

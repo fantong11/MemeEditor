@@ -6,14 +6,27 @@
 //
 
 import Foundation
+import SwiftUI
 import FirebaseAuth
 
 final class LoginViewModel: StateBindingViewModel<LoginViewState> {
-    
     let firebaseService: FirebaseService = FirebaseService()
-
+    @Binding var isPresented: Bool
+    
+    init(initialState: LoginViewState, isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+        super.init(initialState: initialState)
+    }
+    
     func signIn() {
-        firebaseService.signIn(email: state.email, password: state.password)
+        firebaseService.signIn(email: state.email, password: state.password) { errorCode, data in
+            if let errorCode = errorCode {
+                self.state.loginError = errorCode
+                return
+            }
+            print(data ?? "nil")
+            self.isPresented = false
+        }
     }
     
     func signUp() {
