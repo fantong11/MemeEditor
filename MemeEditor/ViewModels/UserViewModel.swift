@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseAuth
+@_implementationOnly import FirebaseAuth
 
 enum LoginSelect {
     case signIn

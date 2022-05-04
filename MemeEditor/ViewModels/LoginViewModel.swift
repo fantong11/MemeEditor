@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 @_implementationOnly import FirebaseAuth
 
 final class LoginViewModel: StateBindingViewModel<LoginViewState> {

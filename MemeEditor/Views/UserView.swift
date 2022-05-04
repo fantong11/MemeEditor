@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import FirebaseAuth
+@_implementationOnly import FirebaseAuth
 
 struct UserView: View {
     @ObservedObject var viewModel: UserViewModel
