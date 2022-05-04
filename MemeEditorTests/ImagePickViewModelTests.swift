@@ -6,11 +6,14 @@
 //
 
 import XCTest
+@testable import MemeEditor
 
-class ImagePickerTests: XCTestCase {
+class ImagePickeViewModelTests: XCTestCase {
+    private var viewModel: ImagePickViewModel!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = ImagePickViewModel()
     }
 
     override func tearDownWithError() throws {
@@ -25,7 +28,8 @@ class ImagePickerTests: XCTestCase {
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
     
-    func testImage() {
+    func testLoadImage() {
+        viewModel.inputImage = UIImage(named: "hello-peter")
         
     }
 

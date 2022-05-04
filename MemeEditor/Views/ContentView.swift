@@ -9,7 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello")
+        VStack {
+            TabView {
+                ImagePickView().tabItem {
+                    NavigationLink(destination: ImagePickView()) {
+                        Image(systemName: "house")
+                        Text("主頁")
+                    }.tag(1)
+                }
+                UserView(viewModel: .init()).tabItem {
+                    NavigationLink(destination: UserView(viewModel: .init())) {
+                        Image(systemName: "person")
+                        Text("我的")
+                    }.tag(2)
+                }
+            }
+        }
     }
     
 }

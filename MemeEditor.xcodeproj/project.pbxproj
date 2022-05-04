@@ -7,24 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11E03E7527E480540048CFC0 /* ImageEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E03E7427E480540048CFC0 /* ImageEditView.swift */; };
+		11FCEB6227E591EE0013412D /* ImageEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCEB6127E591EE0013412D /* ImageEditViewModel.swift */; };
+		11FCEB6427E5B2310013412D /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCEB6327E5B2310013412D /* TextBox.swift */; };
+		11FCEB6627E5F2790013412D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCEB6527E5F2790013412D /* ContentView.swift */; };
+		11FCEB6827E5F2800013412D /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCEB6727E5F27F0013412D /* ImagePickView.swift */; };
+		11FCEB6A27E5F2900013412D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCEB6927E5F2900013412D /* ImagePicker.swift */; };
+		11FCEB6C27E5F2A10013412D /* ImagePickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCEB6B27E5F2A00013412D /* ImagePickViewModel.swift */; };
 		C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E2E27D38D800090894E /* MemeEditorApp.swift */; };
-		C3020E3127D38D800090894E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E3027D38D800090894E /* ContentView.swift */; };
 		C3020E3327D38D820090894E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3020E3227D38D820090894E /* Assets.xcassets */; };
 		C3020E3627D38D820090894E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3020E3527D38D820090894E /* Preview Assets.xcassets */; };
 		C3020E4027D38D830090894E /* MemeEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E3F27D38D830090894E /* MemeEditorTests.swift */; };
 		C3020E4A27D38D830090894E /* MemeEditorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E4927D38D830090894E /* MemeEditorUITests.swift */; };
 		C3020E4C27D38D830090894E /* MemeEditorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */; };
-		C3020E5927D3F3E90090894E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3020E5827D3F3E90090894E /* ImagePicker.swift */; };
-		C337B94927DA352100D23028 /* ImagePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337B94827DA352100D23028 /* ImagePickerTests.swift */; };
-		C337B94B27DA408F00D23028 /* ImagePickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337B94A27DA408F00D23028 /* ImagePickViewModel.swift */; };
-		C3DFC7A327D9C0D5001A2D97 /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC7A227D9C0D5001A2D97 /* ImagePickView.swift */; };
+		C31BC7FD281FBF8900B733C4 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31BC7FC281FBF8900B733C4 /* CanvasView.swift */; };
+		C31BC7FF281FBFC500B733C4 /* AddTextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31BC7FE281FBFC500B733C4 /* AddTextBoxView.swift */; };
+		C31BC801281FC11F00B733C4 /* TextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31BC800281FC11F00B733C4 /* TextBoxView.swift */; };
+		C337B94927DA352100D23028 /* ImagePickViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337B94827DA352100D23028 /* ImagePickViewModelTests.swift */; };
+		C33D66F5280882430031BB9B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D66F4280882430031BB9B /* ContentViewModel.swift */; };
+		C351D732282015B1006C6DD5 /* Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C351D731282015B1006C6DD5 /* Creation.swift */; };
+		C351D734282023B3006C6DD5 /* Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C351D733282023B3006C6DD5 /* Graphic.swift */; };
+		C35600EB280861E500F7AFB2 /* StateBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */; };
+		C35600ED280871B500F7AFB2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35600EC280871B500F7AFB2 /* SettingView.swift */; };
+		C384120B2822B4010079834A /* ImageEditViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384120A2822B4010079834A /* ImageEditViewModelTests.swift */; };
+		C3A5599A280355980016F50B /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A55999280355980016F50B /* ExampleView.swift */; };
+		C3A5599C280415150016F50B /* ExampleView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5599B280415150016F50B /* ExampleView2.swift */; };
+		C3AE1B3B2809E4A1000E2E9D /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE1B3A2809E4A1000E2E9D /* UserView.swift */; };
+		C3AE1B3D2809E7DA000E2E9D /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE1B3C2809E7DA000E2E9D /* UserViewModel.swift */; };
 		C3DFC7A527D9C482001A2D97 /* ImagePickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */; };
+		C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773B27E663AF00CBFFE9 /* ViewExtension.swift */; };
+		C3E8773E27E6DF7500CBFFE9 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */; };
+		C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */; };
+		C3E90A5F27FAEE7F00CF1113 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E90A5E27FAEE7F00CF1113 /* FirebaseService.swift */; };
+		C3E90A6127FAF1CB00CF1113 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E90A6027FAF1CB00CF1113 /* LoginViewState.swift */; };
 		C3F0972E27E3619400CA7D02 /* UserDefaultInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */; };
 		C3F0973227E3677A00CA7D02 /* UserDefaultInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0973127E3677A00CA7D02 /* UserDefaultInfoTests.swift */; };
 		C3F1249827E5B5B2009494BD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C3F1249727E5B5B2009494BD /* FirebaseAuth */; };
 		C3F1249A27E5B5B2009494BD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C3F1249927E5B5B2009494BD /* FirebaseFirestore */; };
 		C3F1249C27E5B5B2009494BD /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = C3F1249B27E5B5B2009494BD /* FirebaseFirestoreSwift-Beta */; };
 		C3F124A027E5B742009494BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3F1249F27E5B742009494BD /* GoogleService-Info.plist */; };
+		C3F124A727E5C966009494BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F124A627E5C966009494BD /* LoginView.swift */; };
+		C3F124A927E5D991009494BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F124A827E5D991009494BD /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +68,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11E03E7427E480540048CFC0 /* ImageEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditView.swift; sourceTree = "<group>"; };
+		11FCEB6127E591EE0013412D /* ImageEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditViewModel.swift; sourceTree = "<group>"; };
+		11FCEB6327E5B2310013412D /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
+		11FCEB6527E5F2790013412D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		11FCEB6727E5F27F0013412D /* ImagePickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
+		11FCEB6927E5F2900013412D /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		11FCEB6B27E5F2A00013412D /* ImagePickViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickViewModel.swift; sourceTree = "<group>"; };
+		11FCEB6F27E63DAE0013412D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C3020E2B27D38D800090894E /* MemeEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3020E2E27D38D800090894E /* MemeEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorApp.swift; sourceTree = "<group>"; };
-		C3020E3027D38D800090894E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C3020E3227D38D820090894E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3020E3527D38D820090894E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C3020E3B27D38D830090894E /* MemeEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,14 +85,31 @@
 		C3020E4527D38D830090894E /* MemeEditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeEditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3020E4927D38D830090894E /* MemeEditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorUITests.swift; sourceTree = "<group>"; };
 		C3020E4B27D38D830090894E /* MemeEditorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		C3020E5827D3F3E90090894E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		C337B94827DA352100D23028 /* ImagePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerTests.swift; sourceTree = "<group>"; };
-		C337B94A27DA408F00D23028 /* ImagePickViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickViewModel.swift; sourceTree = "<group>"; };
-		C3DFC7A227D9C0D5001A2D97 /* ImagePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
+		C31BC7FC281FBF8900B733C4 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		C31BC7FE281FBFC500B733C4 /* AddTextBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextBoxView.swift; sourceTree = "<group>"; };
+		C31BC800281FC11F00B733C4 /* TextBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBoxView.swift; sourceTree = "<group>"; };
+		C337B94827DA352100D23028 /* ImagePickViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickViewModelTests.swift; sourceTree = "<group>"; };
+		C33D66F4280882430031BB9B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		C351D731282015B1006C6DD5 /* Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creation.swift; sourceTree = "<group>"; };
+		C351D733282023B3006C6DD5 /* Graphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphic.swift; sourceTree = "<group>"; };
+		C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBindingViewModel.swift; sourceTree = "<group>"; };
+		C35600EC280871B500F7AFB2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C384120A2822B4010079834A /* ImageEditViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditViewModelTests.swift; sourceTree = "<group>"; };
+		C3A55999280355980016F50B /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		C3A5599B280415150016F50B /* ExampleView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView2.swift; sourceTree = "<group>"; };
+		C3AE1B3A2809E4A1000E2E9D /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		C3AE1B3C2809E7DA000E2E9D /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickUITests.swift; sourceTree = "<group>"; };
+		C3E8773B27E663AF00CBFFE9 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
+		C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithUnderLine.swift; sourceTree = "<group>"; };
+		C3E90A5E27FAEE7F00CF1113 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		C3E90A6027FAF1CB00CF1113 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
 		C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultInfo.swift; sourceTree = "<group>"; };
 		C3F0973127E3677A00CA7D02 /* UserDefaultInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultInfoTests.swift; sourceTree = "<group>"; };
 		C3F1249F27E5B742009494BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C3F124A627E5C966009494BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C3F124A827E5D991009494BD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,15 +163,17 @@
 		C3020E2D27D38D800090894E /* MemeEditor */ = {
 			isa = PBXGroup;
 			children = (
-				C3F124A527E5C397009494BD /* Utilities */,
-				C3F124A427E5C268009494BD /* Components */,
-				C3F124A327E5C23E009494BD /* Views */,
-				C3F124A227E5C230009494BD /* ViewModels */,
-				C3F124A127E5C20D009494BD /* Models */,
+				C3F1249F27E5B742009494BD /* GoogleService-Info.plist */,
+				11FCEB6F27E63DAE0013412D /* Info.plist */,
 				C3020E2E27D38D800090894E /* MemeEditorApp.swift */,
 				C3020E3227D38D820090894E /* Assets.xcassets */,
+				C3F124A427E5C268009494BD /* Components */,
+				C3E8773A27E6638100CBFFE9 /* Extensions */,
+				C3F124A127E5C20D009494BD /* Models */,
 				C3020E3427D38D820090894E /* Preview Content */,
-				C3F1249F27E5B742009494BD /* GoogleService-Info.plist */,
+				C3F124A527E5C397009494BD /* Utilities */,
+				C3F124A227E5C230009494BD /* ViewModels */,
+				C3F124A327E5C23E009494BD /* Views */,
 			);
 			path = MemeEditor;
 			sourceTree = "<group>";
@@ -141,8 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				C3020E3F27D38D830090894E /* MemeEditorTests.swift */,
-				C337B94827DA352100D23028 /* ImagePickerTests.swift */,
+				C337B94827DA352100D23028 /* ImagePickViewModelTests.swift */,
 				C3F0973127E3677A00CA7D02 /* UserDefaultInfoTests.swift */,
+				C384120A2822B4010079834A /* ImageEditViewModelTests.swift */,
 			);
 			path = MemeEditorTests;
 			sourceTree = "<group>";
@@ -157,9 +207,21 @@
 			path = MemeEditorUITests;
 			sourceTree = "<group>";
 		};
+		C3E8773A27E6638100CBFFE9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3E8773B27E663AF00CBFFE9 /* ViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C3F124A127E5C20D009494BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				11FCEB6327E5B2310013412D /* TextBox.swift */,
+				C3E90A6027FAF1CB00CF1113 /* LoginViewState.swift */,
+				C351D731282015B1006C6DD5 /* Creation.swift */,
+				C351D733282023B3006C6DD5 /* Graphic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,7 +229,12 @@
 		C3F124A227E5C230009494BD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C337B94A27DA408F00D23028 /* ImagePickViewModel.swift */,
+				C3F124A827E5D991009494BD /* LoginViewModel.swift */,
+				11FCEB6B27E5F2A00013412D /* ImagePickViewModel.swift */,
+				11FCEB6127E591EE0013412D /* ImageEditViewModel.swift */,
+				C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */,
+				C33D66F4280882430031BB9B /* ContentViewModel.swift */,
+				C3AE1B3C2809E7DA000E2E9D /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -175,8 +242,14 @@
 		C3F124A327E5C23E009494BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C3DFC7A227D9C0D5001A2D97 /* ImagePickView.swift */,
-				C3020E3027D38D800090894E /* ContentView.swift */,
+				C3F124A627E5C966009494BD /* LoginView.swift */,
+				11FCEB6527E5F2790013412D /* ContentView.swift */,
+				11FCEB6727E5F27F0013412D /* ImagePickView.swift */,
+				11E03E7427E480540048CFC0 /* ImageEditView.swift */,
+				C3A55999280355980016F50B /* ExampleView.swift */,
+				C3A5599B280415150016F50B /* ExampleView2.swift */,
+				C35600EC280871B500F7AFB2 /* SettingView.swift */,
+				C3AE1B3A2809E4A1000E2E9D /* UserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,7 +257,12 @@
 		C3F124A427E5C268009494BD /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C3020E5827D3F3E90090894E /* ImagePicker.swift */,
+				C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */,
+				C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */,
+				11FCEB6927E5F2900013412D /* ImagePicker.swift */,
+				C31BC7FC281FBF8900B733C4 /* CanvasView.swift */,
+				C31BC7FE281FBFC500B733C4 /* AddTextBoxView.swift */,
+				C31BC800281FC11F00B733C4 /* TextBoxView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -193,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				C3F0972D27E3619400CA7D02 /* UserDefaultInfo.swift */,
+				C3E90A5E27FAEE7F00CF1113 /* FirebaseService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -336,12 +415,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A5599C280415150016F50B /* ExampleView2.swift in Sources */,
+				C35600ED280871B500F7AFB2 /* SettingView.swift in Sources */,
+				C3E8773E27E6DF7500CBFFE9 /* SecureInputView.swift in Sources */,
+				C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */,
+				11FCEB6227E591EE0013412D /* ImageEditViewModel.swift in Sources */,
+				C31BC801281FC11F00B733C4 /* TextBoxView.swift in Sources */,
+				C3AE1B3B2809E4A1000E2E9D /* UserView.swift in Sources */,
+				11FCEB6427E5B2310013412D /* TextBox.swift in Sources */,
+				C3E90A6127FAF1CB00CF1113 /* LoginViewState.swift in Sources */,
+				11FCEB6827E5F2800013412D /* ImagePickView.swift in Sources */,
+				C31BC7FD281FBF8900B733C4 /* CanvasView.swift in Sources */,
+				C351D732282015B1006C6DD5 /* Creation.swift in Sources */,
+				11E03E7527E480540048CFC0 /* ImageEditView.swift in Sources */,
+				C3AE1B3D2809E7DA000E2E9D /* UserViewModel.swift in Sources */,
 				C3F0972E27E3619400CA7D02 /* UserDefaultInfo.swift in Sources */,
-				C3020E5927D3F3E90090894E /* ImagePicker.swift in Sources */,
-				C3020E3127D38D800090894E /* ContentView.swift in Sources */,
+				C35600EB280861E500F7AFB2 /* StateBindingViewModel.swift in Sources */,
+				C3F124A727E5C966009494BD /* LoginView.swift in Sources */,
+				C3E90A5F27FAEE7F00CF1113 /* FirebaseService.swift in Sources */,
+				C3F124A927E5D991009494BD /* LoginViewModel.swift in Sources */,
+				11FCEB6627E5F2790013412D /* ContentView.swift in Sources */,
+				C351D734282023B3006C6DD5 /* Graphic.swift in Sources */,
+				11FCEB6A27E5F2900013412D /* ImagePicker.swift in Sources */,
 				C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */,
-				C337B94B27DA408F00D23028 /* ImagePickViewModel.swift in Sources */,
-				C3DFC7A327D9C0D5001A2D97 /* ImagePickView.swift in Sources */,
+				C33D66F5280882430031BB9B /* ContentViewModel.swift in Sources */,
+				C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */,
+				C31BC7FF281FBFC500B733C4 /* AddTextBoxView.swift in Sources */,
+				11FCEB6C27E5F2A10013412D /* ImagePickViewModel.swift in Sources */,
+				C3A5599A280355980016F50B /* ExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,9 +450,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C384120B2822B4010079834A /* ImageEditViewModelTests.swift in Sources */,
 				C3020E4027D38D830090894E /* MemeEditorTests.swift in Sources */,
 				C3F0973227E3677A00CA7D02 /* UserDefaultInfoTests.swift in Sources */,
-				C337B94927DA352100D23028 /* ImagePickerTests.swift in Sources */,
+				C337B94927DA352100D23028 /* ImagePickViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +610,8 @@
 				DEVELOPMENT_TEAM = 4L7C3QD67C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MemeEditor/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To save images to your photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -537,6 +641,8 @@
 				DEVELOPMENT_TEAM = 4L7C3QD67C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MemeEditor/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To save images to your photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

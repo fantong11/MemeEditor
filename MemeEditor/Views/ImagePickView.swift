@@ -10,28 +10,39 @@ import SwiftUI
 struct ImagePickView: View {
     // image for ui
     @State private var image: Image?
+    @State private var isShowingEditView = false
     @ObservedObject var viewModel = ImagePickViewModel()
     
+    
+    
     var body: some View {
-        VStack {
-            Button("Choose an image from gallery") {
-                viewModel.showingImagePicker = true
-            }
-            .accessibilityIdentifier("pickImageButton")
-            .padding()
-            image?
-                .resizable()
-                .scaledToFit()
+        NavigationView {
+            VStack {
+                Button("Choose an image from gallery") {
+                    viewModel.showingImagePicker = true
+                }
+                .accessibilityIdentifier("pickImageButton")
                 .padding()
-                .accessibilityIdentifier("pickedImage")
+                
+                NavigationLink(destination: ImageEditView(baseImage: $viewModel.inputImage), isActive: $isShowingEditView) { EmptyView() }
+                
+                Button("Tap to use Doc Oct") {
+                    viewModel.inputImage = UIImage(named: "hello-peter")
+                    isShowingEditView = true
+                }
+            }
+            .onChange(of: viewModel.inputImage) { _ in
+                if let inputImage = viewModel.inputImage {
+                    image = Image(uiImage: inputImage)
+                    
+                    isShowingEditView = true
+                }
+            }
+            .sheet(isPresented: $viewModel.showingImagePicker) {
+                ImagePicker(image: $viewModel.inputImage)
+            }
         }
-        .navigationTitle("Choose an image")
-        .onChange(of: viewModel.inputImage) { _ in
-            image = viewModel.loadImage()
-        }
-        .sheet(isPresented: $viewModel.showingImagePicker) {
-            ImagePicker(image: $viewModel.inputImage)
-        }
+        
     }
 }
 
