@@ -11,7 +11,7 @@ struct ImagePickView: View {
     // image for ui
     @State private var image: Image?
     @State private var isShowingEditView = false
-    @ObservedObject var viewModel = ViewModel()
+    @ObservedObject var viewModel = ImagePickViewModel()
     
     
     
@@ -31,7 +31,6 @@ struct ImagePickView: View {
                     isShowingEditView = true
                 }
             }
-            .navigationTitle("Choose an image")
             .onChange(of: viewModel.inputImage) { _ in
                 if let inputImage = viewModel.inputImage {
                     image = Image(uiImage: inputImage)

@@ -9,18 +9,18 @@ import Foundation
 import UIKit
 import SwiftUI
 
-extension ImagePickView {
-    class ViewModel: ObservableObject {
-        @Published var showingImagePicker: Bool = false
-        @Published var inputImage: UIImage?
+class ImagePickViewModel: ObservableObject {
+    @Published var showingImagePicker: Bool = false
+    @Published var inputImage: UIImage?
+    
+    @Published var creations: [Creation] = []
+    
+    init() {
         
-        init() {
-            
-        }
-        
-        func loadImage() -> Image? {
-            guard let inputImage = inputImage else { return nil }
-            return Image(uiImage: inputImage)
-        }
+    }
+    
+    func loadImage() -> Image? {
+        guard let inputImage = inputImage else { return nil }
+        return Image(uiImage: inputImage)
     }
 }

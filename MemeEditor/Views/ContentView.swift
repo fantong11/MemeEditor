@@ -12,18 +12,12 @@ struct ContentView: View {
         VStack {
             TabView {
                 ImagePickView().tabItem {
-                    NavigationLink(destination: ImagePickView()) {
-                        Image(systemName: "car")
-                        Text("Trips")
-
-                    }.tag(1)
+                    Image(systemName: "car")
+                    Text("Trips")
                 }
                 SettingView().tabItem {
-                    NavigationLink(destination: SettingView()) {
-                        Image(systemName: "car")
-                        Text("Trips")
-
-                    }.tag(2)
+                    Image(systemName: "car")
+                    Text("Trips")
                 }
             }
         }

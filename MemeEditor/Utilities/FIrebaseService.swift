@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import FirebaseAuth
-import FirebaseFirestore
+@_implementationOnly import FirebaseAuth
+@_implementationOnly import FirebaseFirestore
 
 class FirebaseService {
     let firebaseAuth = FirebaseAuth.Auth.auth()
