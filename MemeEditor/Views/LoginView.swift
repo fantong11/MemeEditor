@@ -27,7 +27,7 @@ struct LoginView: View {
                     case .signUp:
                         TextFieldWithUnderLine("Email", text: $viewModel.state.email, keyboardType: .emailAddress)
                         SecureInputView("密碼", text: $viewModel.state.password)
-                        SecureInputView("重新輸入密碼", text: $viewModel.state.comfirmPassword)
+                        SecureInputView("重新輸入密碼", text: $viewModel.state.confirmPassword)
                         
                     case .resetPassword:
                         TextFieldWithUnderLine("Email", text: $viewModel.state.email, keyboardType: .emailAddress)
