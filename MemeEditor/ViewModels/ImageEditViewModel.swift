@@ -13,7 +13,7 @@ class ImageEditViewModel: ObservableObject {
     @Published var toolPicker = PKToolPicker()
     @Published var isDrawing = false
     
-    @Published var textBoxes = [TextBox]()
+    @Published var textBoxes: [TextBox] = []
     @Published var addingTextBox = false
     @Published var currentIndex = 0
     
@@ -54,6 +54,10 @@ class ImageEditViewModel: ObservableObject {
         }
     }
     
+    func addTextBox() {
+        textBoxes[currentIndex].isAdded = true
+        addingTextBox = false
+    }
     
     func cancelTextBoxView() {
         withAnimation {
@@ -66,11 +70,13 @@ class ImageEditViewModel: ObservableObject {
         }
         currentIndex = 0
     }
+    
     func getIndex(of textBox: TextBox) -> Int {
         textBoxes.firstIndex { box -> Bool in
             textBox.id == box.id
         } ?? 0
     }
+    
     func saveImage() {
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
         

@@ -25,8 +25,7 @@ struct AddTextBoxView: View {
                 .focused($isTextBoxFocused)
             HStack {
                 Button {
-                    viewModel.textBoxes[viewModel.currentIndex].isAdded = true
-                    viewModel.addingTextBox = false
+                    viewModel.addTextBox()
                 } label: {
                     Text("Add")
                         .fontWeight(.bold)

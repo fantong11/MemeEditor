@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Firebase
+@_implementationOnly import Firebase
 
 @main
 struct MemeEditorApp: App {

@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
-import FirebaseAuth
+@_implementationOnly import FirebaseAuth
 
 final class LoginViewModel: StateBindingViewModel<LoginViewState> {
     let firebaseService: FirebaseService = FirebaseService()
