@@ -22,9 +22,14 @@ struct ImageEditView: View {
                 return CanvasView(canvas: $viewModel.canvas, toolPicker: $viewModel.toolPicker, image: $viewModel.creation.image, rect: geometry.frame(in: .global).size)
             }
             
+            ForEach(viewModel.stickers) { sticker in
+                StickerView(sticker: sticker)
+            }
+            
             ForEach(viewModel.textBoxes) { textBox in
                 TextBoxView(textBox: textBox)
             }
+            
             
             // feature select toolbar
             VStack {
@@ -36,6 +41,9 @@ struct ImageEditView: View {
                         Button("Text") {
                             viewModel.createTextBox()
                             isTextBoxFocused.toggle()
+                        }
+                        Button("Sticker") {
+                            viewModel.isShowingStickerSheet = true
                         }
                     }
                     else {
@@ -64,10 +72,16 @@ struct ImageEditView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Save", action: viewModel.saveImage)
+                Button("Save Image", action: viewModel.saveImage)
                     .disabled(viewModel.addingTextBox)
             }
         }
+        .sheet(isPresented: $viewModel.isShowingStickerSheet, content: {
+            StickerSelectView()
+        })
+        .sheet(isPresented: $viewModel.isShowingEditSheet, content: {
+            StickerEditView()
+        })
         .alert(viewModel.alertTitle, isPresented: $viewModel.showingAlert) {
             Button("OK") { }
         } message: {

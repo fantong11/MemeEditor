@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1165579C2858E2AD0074060C /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165579B2858E2AD0074060C /* Sticker.swift */; };
+		1165579E2858EC3A0074060C /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165579D2858EC3A0074060C /* StickerView.swift */; };
+		116557A028596BC30074060C /* StickerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165579F28596BC30074060C /* StickerEditView.swift */; };
+		116557A22859767A0074060C /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116557A12859767A0074060C /* RoundedRectangleButtonStyle.swift */; };
 		11E03E7527E480540048CFC0 /* ImageEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E03E7427E480540048CFC0 /* ImageEditView.swift */; };
+		11FCA99D2858BDDC00BD66F5 /* StickerSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCA99C2858BDDC00BD66F5 /* StickerSelectView.swift */; };
 		11FCEB6227E591EE0013412D /* ImageEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCEB6127E591EE0013412D /* ImageEditViewModel.swift */; };
 		11FCEB6427E5B2310013412D /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCEB6327E5B2310013412D /* TextBox.swift */; };
 		11FCEB6627E5F2790013412D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCEB6527E5F2790013412D /* ContentView.swift */; };
@@ -69,7 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1165579B2858E2AD0074060C /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
+		1165579D2858EC3A0074060C /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
+		1165579F28596BC30074060C /* StickerEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerEditView.swift; sourceTree = "<group>"; };
+		116557A12859767A0074060C /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
 		11E03E7427E480540048CFC0 /* ImageEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditView.swift; sourceTree = "<group>"; };
+		11FCA99C2858BDDC00BD66F5 /* StickerSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerSelectView.swift; sourceTree = "<group>"; };
 		11FCEB6127E591EE0013412D /* ImageEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditViewModel.swift; sourceTree = "<group>"; };
 		11FCEB6327E5B2310013412D /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		11FCEB6527E5F2790013412D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -221,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				11FCEB6327E5B2310013412D /* TextBox.swift */,
+				1165579B2858E2AD0074060C /* Sticker.swift */,
 				C3E90A6027FAF1CB00CF1113 /* LoginViewState.swift */,
 				C351D731282015B1006C6DD5 /* Creation.swift */,
 				C351D733282023B3006C6DD5 /* Graphic.swift */,
@@ -248,6 +259,8 @@
 				11FCEB6527E5F2790013412D /* ContentView.swift */,
 				11FCEB6727E5F27F0013412D /* ImagePickView.swift */,
 				11E03E7427E480540048CFC0 /* ImageEditView.swift */,
+				1165579F28596BC30074060C /* StickerEditView.swift */,
+				11FCA99C2858BDDC00BD66F5 /* StickerSelectView.swift */,
 				C3A55999280355980016F50B /* ExampleView.swift */,
 				C3A5599B280415150016F50B /* ExampleView2.swift */,
 				C35600EC280871B500F7AFB2 /* SettingView.swift */,
@@ -266,6 +279,8 @@
 				C31BC7FE281FBFC500B733C4 /* AddTextBoxView.swift */,
 				C31BC800281FC11F00B733C4 /* TextBoxView.swift */,
 				C3E7F8622858D9DA00DA11A8 /* TextFieldAlertModifier.swift */,
+				1165579D2858EC3A0074060C /* StickerView.swift */,
+				116557A12859767A0074060C /* RoundedRectangleButtonStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -424,6 +439,8 @@
 				C3E7F8632858D9DA00DA11A8 /* TextFieldAlertModifier.swift in Sources */,
 				C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */,
 				11FCEB6227E591EE0013412D /* ImageEditViewModel.swift in Sources */,
+				1165579E2858EC3A0074060C /* StickerView.swift in Sources */,
+				1165579C2858E2AD0074060C /* Sticker.swift in Sources */,
 				C31BC801281FC11F00B733C4 /* TextBoxView.swift in Sources */,
 				C3AE1B3B2809E4A1000E2E9D /* UserView.swift in Sources */,
 				11FCEB6427E5B2310013412D /* TextBox.swift in Sources */,
@@ -440,12 +457,15 @@
 				C3F124A927E5D991009494BD /* LoginViewModel.swift in Sources */,
 				11FCEB6627E5F2790013412D /* ContentView.swift in Sources */,
 				C351D734282023B3006C6DD5 /* Graphic.swift in Sources */,
+				11FCA99D2858BDDC00BD66F5 /* StickerSelectView.swift in Sources */,
 				11FCEB6A27E5F2900013412D /* ImagePicker.swift in Sources */,
 				C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */,
+				116557A028596BC30074060C /* StickerEditView.swift in Sources */,
 				C33D66F5280882430031BB9B /* ContentViewModel.swift in Sources */,
 				C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */,
 				C31BC7FF281FBFC500B733C4 /* AddTextBoxView.swift in Sources */,
 				11FCEB6C27E5F2A10013412D /* ImagePickViewModel.swift in Sources */,
+				116557A22859767A0074060C /* RoundedRectangleButtonStyle.swift in Sources */,
 				C3A5599A280355980016F50B /* ExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

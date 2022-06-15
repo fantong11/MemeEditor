@@ -15,7 +15,7 @@ class ImageEditViewModel: ObservableObject {
     
     @Published var textBoxes: [TextBox] = []
     @Published var addingTextBox = false
-    @Published var currentIndex = 0
+    @Published var currentTextBoxIndex = 0
     
     // For saving image
     @Published var rect: CGRect = .zero
@@ -29,6 +29,14 @@ class ImageEditViewModel: ObservableObject {
     init(creation: Creation) {
         self.creation = creation
     }
+    
+    
+    @Published var stickers = [Sticker]()
+    @Published var isShowingStickerSheet = false
+//    @Published var currentStickerName = ""
+    
+    @Published var stickerEditIndex = 0
+    @Published var isShowingEditSheet = false
     
     var showingFeaturesToolBar: Bool {
         return !addingTextBox
@@ -54,7 +62,7 @@ class ImageEditViewModel: ObservableObject {
         guard !addingTextBox else { return }
         // Create a new text box
         textBoxes.append(TextBox())
-        currentIndex = textBoxes.count - 1
+        currentTextBoxIndex = textBoxes.count - 1
         withAnimation {
             addingTextBox.toggle()
         }
@@ -69,18 +77,32 @@ class ImageEditViewModel: ObservableObject {
         withAnimation {
             addingTextBox = false
         }
-        if !textBoxes[currentIndex].isAdded {
+        if !textBoxes[currentTextBoxIndex].isAdded {
             textBoxes.removeLast()
         } else {
-            textBoxes.remove(at: currentIndex)
+            textBoxes.remove(at: currentTextBoxIndex)
         }
-        currentIndex = 0
+        currentTextBoxIndex = 0
     }
     
     func getIndex(of textBox: TextBox) -> Int {
         textBoxes.firstIndex { box -> Bool in
             textBox.id == box.id
         } ?? 0
+    }
+    
+    
+    func getIndex(of sticker: Sticker) -> Int {
+        stickers.firstIndex { s -> Bool in
+            sticker.id == s.id
+        } ?? 0
+    }
+    
+    // used in sticker edit view
+    func removeSticker(_ sticker: Sticker) {
+        isShowingEditSheet = false
+        stickers.remove(at: stickerEditIndex)
+        stickerEditIndex = 0
     }
     
     func saveImage() {
@@ -91,12 +113,21 @@ class ImageEditViewModel: ObservableObject {
         
         //SwiftUI
         let swiftUIView = ZStack {
-            ForEach(textBoxes) { [self] textBox in
-                Text(textBoxes[currentIndex].id == textBox.id && addingTextBox ? "" : textBox.text)
+            ForEach(textBoxes) { textBox in
+                Text(textBox.text)
                     .font(.system(size: 30))
                     .fontWeight(textBox.isBold ? .bold : .regular)
                     .foregroundColor(textBox.textColor)
                     .offset(textBox.offset)
+            }
+            ForEach(stickers) { sticker in
+                Image(sticker.name)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100 * sticker.scale)
+                    .opacity(sticker.opacity)
+                    .rotationEffect(.degrees(sticker.rotation))
+                    .offset(sticker.offset)
             }
         }
         

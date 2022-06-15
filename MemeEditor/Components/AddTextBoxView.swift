@@ -17,15 +17,17 @@ struct AddTextBoxView: View {
             .ignoresSafeArea()
 //        let _ = print("\(viewModel.currentIndex), \(viewModel.textBoxes.count)")
         if !viewModel.textBoxes.isEmpty {
-            TextField("Type Here", text: $viewModel.textBoxes[viewModel.currentIndex].text)
-                .font(.system(size: 35, weight: viewModel.textBoxes[viewModel.currentIndex].isBold ? .bold : .regular))
-                .foregroundColor(viewModel.textBoxes[viewModel.currentIndex].textColor)
+            TextField("Type Here", text: $viewModel.textBoxes[viewModel.currentTextBoxIndex].text)
+                .font(.system(size: 35, weight: viewModel.textBoxes[viewModel.currentTextBoxIndex].isBold ? .bold : .regular))
+                .foregroundColor(viewModel.textBoxes[viewModel.currentTextBoxIndex].textColor)
                 .padding()
                 .preferredColorScheme(.dark)
                 .focused($isTextBoxFocused)
             HStack {
                 Button {
                     viewModel.addTextBox()
+                    viewModel.textBoxes[viewModel.currentTextBoxIndex].isAdded = true
+                    viewModel.addingTextBox = false
                 } label: {
                     Text("Add")
                         .fontWeight(.bold)
@@ -41,12 +43,12 @@ struct AddTextBoxView: View {
             }
             .overlay {
                 HStack(spacing: 15) {
-                    ColorPicker("Set the text color", selection: $viewModel.textBoxes[viewModel.currentIndex].textColor)
+                    ColorPicker("Set the text color", selection: $viewModel.textBoxes[viewModel.currentTextBoxIndex].textColor)
                         .labelsHidden()
                     Button {
-                        viewModel.textBoxes[viewModel.currentIndex].isBold.toggle()
+                        viewModel.textBoxes[viewModel.currentTextBoxIndex].isBold.toggle()
                     } label: {
-                        Text(viewModel.textBoxes[viewModel.currentIndex].isBold ? "Normal" : "Bold")
+                        Text(viewModel.textBoxes[viewModel.currentTextBoxIndex].isBold ? "Normal" : "Bold")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                     }
