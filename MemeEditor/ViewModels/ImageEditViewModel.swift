@@ -22,17 +22,16 @@ class ImageEditViewModel: ObservableObject {
     @Published var alertTitle = ""
     @Published var alertMessage = ""
     
+    @Published var isShowingStickerSheet = false
+//    @Published var currentStickerName = ""
+    
+    @Published var isShowingEditSheet = false
+    
     @Published var creation: Creation
     
     init(creation: Creation) {
         self.creation = creation
     }
-    
-    
-    @Published var isShowingStickerSheet = false
-//    @Published var currentStickerName = ""
-    
-    @Published var isShowingEditSheet = false
     
     var showingFeaturesToolBar: Bool {
         return !addingTextBox
