@@ -37,6 +37,7 @@ struct ImagePickView: View {
                                 Text(creation.name)
                             }
                         }
+                        .onDelete(perform: viewModel.deleteCreation)
                     }
                     .navigationTitle("Creations")
                     .toolbar {

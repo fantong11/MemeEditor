@@ -21,7 +21,7 @@ struct StickerSelectView: View {
                     ForEach(1..<19) { i in
                         Button {
                             let sticker = Sticker(name: "sticker\(i)")
-                            viewModel.stickers.append(sticker)
+                            viewModel.addSticker(sticker)
                             dismiss()
                         } label: {
                             Image("sticker\(i)")
@@ -43,9 +43,9 @@ struct StickerSelectView: View {
     }
 }
 
-struct StickerSelectView_Previews: PreviewProvider {
-    static var previews: some View {
-        StickerSelectView()
-            .previewInterfaceOrientation(.portrait)
-    }
-}
+//struct StickerSelectView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        StickerSelectView()
+//            .previewInterfaceOrientation(.portrait)
+//    }
+//}

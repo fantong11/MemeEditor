@@ -34,6 +34,8 @@
 		C351D734282023B3006C6DD5 /* Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C351D733282023B3006C6DD5 /* Graphic.swift */; };
 		C35600EB280861E500F7AFB2 /* StateBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */; };
 		C35600ED280871B500F7AFB2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35600EC280871B500F7AFB2 /* SettingView.swift */; };
+		C37D0936285A18620002130E /* TextBoxList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D0935285A18620002130E /* TextBoxList.swift */; };
+		C37D0938285A1D290002130E /* StickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D0937285A1D290002130E /* StickerList.swift */; };
 		C384120B2822B4010079834A /* ImageEditViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384120A2822B4010079834A /* ImageEditViewModelTests.swift */; };
 		C3A5599A280355980016F50B /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A55999280355980016F50B /* ExampleView.swift */; };
 		C3A5599C280415150016F50B /* ExampleView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5599B280415150016F50B /* ExampleView2.swift */; };
@@ -105,6 +107,8 @@
 		C351D733282023B3006C6DD5 /* Graphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphic.swift; sourceTree = "<group>"; };
 		C35600EA280861E500F7AFB2 /* StateBindingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBindingViewModel.swift; sourceTree = "<group>"; };
 		C35600EC280871B500F7AFB2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C37D0935285A18620002130E /* TextBoxList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBoxList.swift; sourceTree = "<group>"; };
+		C37D0937285A1D290002130E /* StickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerList.swift; sourceTree = "<group>"; };
 		C384120A2822B4010079834A /* ImageEditViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditViewModelTests.swift; sourceTree = "<group>"; };
 		C3A55999280355980016F50B /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		C3A5599B280415150016F50B /* ExampleView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView2.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 				C3E90A6027FAF1CB00CF1113 /* LoginViewState.swift */,
 				C351D731282015B1006C6DD5 /* Creation.swift */,
 				C351D733282023B3006C6DD5 /* Graphic.swift */,
+				C37D0935285A18620002130E /* TextBoxList.swift */,
+				C37D0937285A1D290002130E /* StickerList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -456,7 +462,9 @@
 				C3E90A5F27FAEE7F00CF1113 /* FirebaseService.swift in Sources */,
 				C3F124A927E5D991009494BD /* LoginViewModel.swift in Sources */,
 				11FCEB6627E5F2790013412D /* ContentView.swift in Sources */,
+				C37D0936285A18620002130E /* TextBoxList.swift in Sources */,
 				C351D734282023B3006C6DD5 /* Graphic.swift in Sources */,
+				C37D0938285A1D290002130E /* StickerList.swift in Sources */,
 				11FCA99D2858BDDC00BD66F5 /* StickerSelectView.swift in Sources */,
 				11FCEB6A27E5F2900013412D /* ImagePicker.swift in Sources */,
 				C3020E2F27D38D800090894E /* MemeEditorApp.swift in Sources */,

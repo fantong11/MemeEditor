@@ -10,7 +10,6 @@ import PencilKit
 
 struct ImageEditView: View {
     @EnvironmentObject var viewModel: ImageEditViewModel
-    //@Binding var baseImage: UIImage?
     @FocusState private var isTextBoxFocused: Bool
     
     var body: some View {
@@ -22,11 +21,11 @@ struct ImageEditView: View {
                 return CanvasView(canvas: $viewModel.canvas, toolPicker: $viewModel.toolPicker, image: $viewModel.creation.image, rect: geometry.frame(in: .global).size)
             }
             
-            ForEach(viewModel.stickers) { sticker in
+            ForEach(viewModel.creation.stickerList.stickers) { sticker in
                 StickerView(sticker: sticker)
             }
             
-            ForEach(viewModel.textBoxes) { textBox in
+            ForEach(viewModel.creation.textBoxList.textBoxes) { textBox in
                 TextBoxView(textBox: textBox)
             }
             
@@ -87,12 +86,13 @@ struct ImageEditView: View {
         } message: {
                Text(viewModel.alertMessage)
         }
+        .navigationBarTitleDisplayMode(.inline)  
     }
 }
 
 struct ImageEditView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageEditView().environmentObject(ImagePickViewModel(creations: Creation.sampleData))
+        ImageEditView().environmentObject(ImageEditViewModel(creation: Creation.sampleData[0]))
     }
 }
 

@@ -8,14 +8,12 @@
 import SwiftUI
 import PencilKit
 
-struct TextBox: Identifiable {
+class TextBox: Graphic, Identifiable {
     var id = UUID()
     var text = ""
     var isBold = true
-    
     var offset: CGSize = .zero
     var lastOffset: CGSize = .zero
     var textColor: Color = .white
-    
     var isAdded = false
 }

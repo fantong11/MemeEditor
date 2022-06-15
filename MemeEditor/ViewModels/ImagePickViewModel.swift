@@ -38,4 +38,8 @@ class ImagePickViewModel: ObservableObject {
     func addCreation(creation: Creation) {
         creations.append(creation)
     }
+    
+    func deleteCreation(at offsets: IndexSet) {
+        creations.remove(atOffsets: offsets)
+    }
 }

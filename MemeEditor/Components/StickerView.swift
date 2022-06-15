@@ -24,14 +24,14 @@ struct StickerView: View {
                     let current = value.translation
                     let last = sticker.lastOffset
                     let newTranslation = CGSize(width: last.width + current.width, height: last.height + current.height)
-                    viewModel.stickers[viewModel.getIndex(of: sticker)].offset = newTranslation
+                    viewModel.creation.stickerList.stickers[viewModel.getIndex(of: sticker)].offset = newTranslation
                 }.onEnded { value in
-                    viewModel.stickers[viewModel.getIndex(of: sticker)].lastOffset = value.translation
+                    viewModel.creation.stickerList.stickers[viewModel.getIndex(of: sticker)].lastOffset = value.translation
                 }
             )
             .gesture(LongPressGesture()
                 .onEnded{ _ in
-                    viewModel.stickerEditIndex = viewModel.getIndex(of: sticker)
+                    viewModel.creation.stickerList.editIndex = viewModel.getIndex(of: sticker)
                     viewModel.isShowingEditSheet = true
                 }
             )

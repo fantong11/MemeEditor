@@ -14,23 +14,23 @@ struct StickerEditView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if !viewModel.stickers.isEmpty {
-                    Image(viewModel.stickers[viewModel.stickerEditIndex].name)
+                if !viewModel.creation.stickerList.stickers.isEmpty {
+                    Image(viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].name)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 100 * viewModel.stickers[viewModel.stickerEditIndex].scale)
-                        .opacity(viewModel.stickers[viewModel.stickerEditIndex].opacity)
-                        .rotationEffect(.degrees(viewModel.stickers[viewModel.stickerEditIndex].rotation))
+                        .frame(width: 100 * viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].scale)
+                        .opacity(viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].opacity)
+                        .rotationEffect(.degrees(viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].rotation))
                         .frame(height: 300)
                     Spacer()
                     Group {
                         VStack(alignment: .leading) {
-                            Text("Scale: \(viewModel.stickers[viewModel.stickerEditIndex].scale, specifier: "%.1f")x")
-                            Slider(value: $viewModel.stickers[viewModel.stickerEditIndex].scale, in: 0.2...3)
-                            Text("Rotation: \(viewModel.stickers[viewModel.stickerEditIndex].rotation, specifier: "%.0f")°")
-                            Slider(value: $viewModel.stickers[viewModel.stickerEditIndex].rotation, in: 0...360)
-                            Text("Opacity: \(viewModel.stickers[viewModel.stickerEditIndex].opacity * 100, specifier: "%.0f")%")
-                            Slider(value: $viewModel.stickers[viewModel.stickerEditIndex].opacity, in: 0.1...1)
+                            Text("Scale: \(viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].scale, specifier: "%.1f")x")
+                            Slider(value: $viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].scale, in: 0.2...3)
+                            Text("Rotation: \(viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].rotation, specifier: "%.0f")°")
+                            Slider(value: $viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].rotation, in: 0...360)
+                            Text("Opacity: \(viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].opacity * 100, specifier: "%.0f")%")
+                            Slider(value: $viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex].opacity, in: 0.1...1)
                         }
                         Spacer()
                         Button("Done") {
@@ -43,7 +43,7 @@ struct StickerEditView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         Button("Remove Sticker", role: .destructive) {
-                            viewModel.removeSticker(viewModel.stickers[viewModel.stickerEditIndex])
+                            viewModel.removeSticker(viewModel.creation.stickerList.stickers[viewModel.creation.stickerList.editIndex])
                         }
                         .foregroundColor(.red)
                     }
@@ -53,8 +53,8 @@ struct StickerEditView: View {
     }
 }
 
-struct StickerEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        StickerEditView()
-    }
-}
+//struct StickerEditView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        StickerEditView()
+//    }
+//}

@@ -10,20 +10,16 @@ import UIKit
 import SwiftUI
 
 protocol Graphic {
-    var points: CGPoint { get set }
-    var size: CGSize { get set }
+    var offset: CGSize { get set }
+    var lastOffset: CGSize { get set }
 }
 
-struct TextBox2: Graphic {
-    var points: CGPoint
-    var size: CGSize
-    
+class TextBox2: Graphic, Identifiable {
+    var id: UUID = UUID()
     var text = ""
     var isBold = true
-    
     var offset: CGSize = .zero
     var lastOffset: CGSize = .zero
     var textColor: Color = .white
-    
     var isAdded = false
 }

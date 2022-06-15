@@ -21,6 +21,5 @@ struct LoginViewState: Equatable {
     var password: String = ""
     var confirmPassword: String = ""
     var loginError: AuthErrorCode?
-    var confirmPassword: String = ""
     var passwordError: String?
 }

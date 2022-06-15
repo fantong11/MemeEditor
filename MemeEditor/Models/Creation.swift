@@ -12,7 +12,9 @@ class Creation: Identifiable {
     var id: UUID
     var name: String
     var image: UIImage?
-    var graphic: [Graphic] = []
+    var graphics: [Graphic] = []
+    var stickerList: StickerList = StickerList(stickers: [])
+    var textBoxList: TextBoxList = TextBoxList(textBoxes: [])
     
     init(id: UUID = UUID(), name: String, image: UIImage?) {
         self.id = id
@@ -20,12 +22,28 @@ class Creation: Identifiable {
         self.image = image
     }
     
-    func add(graphic: Graphic) {
-        self.graphic.append(graphic)
+//    func add(graphic: Graphic) {
+//        self.graphic.append(graphic)
+//    }
+    
+    func addTextBoxes(textBox: TextBox) {
+        self.textBoxList.textBoxes.append(textBox)
     }
     
-    func size() -> Int {
-        return graphic.count
+    func addStickers(sticker: Sticker) {
+        self.stickerList.stickers.append(sticker)
+    }
+    
+//    func size() -> Int {
+//        return graphic.count
+//    }
+    
+    func textBoxesSize() -> Int {
+        return textBoxList.textBoxes.count
+    }
+    
+    func stickersSize() -> Int {
+        return stickerList.stickers.count
     }
 }
 
