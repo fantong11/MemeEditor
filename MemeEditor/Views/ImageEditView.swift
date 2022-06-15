@@ -9,8 +9,8 @@ import SwiftUI
 import PencilKit
 
 struct ImageEditView: View {
-    @StateObject var viewModel = ImageEditViewModel()
-    @Binding var baseImage: UIImage?
+    @EnvironmentObject var viewModel: ImageEditViewModel
+    //@Binding var baseImage: UIImage?
     @FocusState private var isTextBoxFocused: Bool
     
     var body: some View {
@@ -19,7 +19,7 @@ struct ImageEditView: View {
                 DispatchQueue.main.async {
                     viewModel.rect = geometry.frame(in: .global)
                 }
-                return CanvasView(canvas: $viewModel.canvas, toolPicker: $viewModel.toolPicker, image: $baseImage, rect: geometry.frame(in: .global).size)
+                return CanvasView(canvas: $viewModel.canvas, toolPicker: $viewModel.toolPicker, image: $viewModel.creation.image, rect: geometry.frame(in: .global).size)
             }
             
             ForEach(viewModel.textBoxes) { textBox in
@@ -73,13 +73,12 @@ struct ImageEditView: View {
         } message: {
                Text(viewModel.alertMessage)
         }
-        .environmentObject(viewModel)
     }
 }
 
 struct ImageEditView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageEditView(baseImage: .constant(UIImage(named: "hello-peter")!))
+        ImageEditView().environmentObject(ImagePickViewModel(creations: Creation.sampleData))
     }
 }
 

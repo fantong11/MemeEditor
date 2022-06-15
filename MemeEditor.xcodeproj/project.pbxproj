@@ -35,6 +35,7 @@
 		C3AE1B3B2809E4A1000E2E9D /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE1B3A2809E4A1000E2E9D /* UserView.swift */; };
 		C3AE1B3D2809E7DA000E2E9D /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE1B3C2809E7DA000E2E9D /* UserViewModel.swift */; };
 		C3DFC7A527D9C482001A2D97 /* ImagePickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */; };
+		C3E7F8632858D9DA00DA11A8 /* TextFieldAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E7F8622858D9DA00DA11A8 /* TextFieldAlertModifier.swift */; };
 		C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773B27E663AF00CBFFE9 /* ViewExtension.swift */; };
 		C3E8773E27E6DF7500CBFFE9 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */; };
 		C3E8774027E6E64400CBFFE9 /* TextFieldWithUnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */; };
@@ -100,6 +101,7 @@
 		C3AE1B3A2809E4A1000E2E9D /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		C3AE1B3C2809E7DA000E2E9D /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		C3DFC7A427D9C482001A2D97 /* ImagePickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickUITests.swift; sourceTree = "<group>"; };
+		C3E7F8622858D9DA00DA11A8 /* TextFieldAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlertModifier.swift; sourceTree = "<group>"; };
 		C3E8773B27E663AF00CBFFE9 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		C3E8773D27E6DF7500CBFFE9 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
 		C3E8773F27E6E64400CBFFE9 /* TextFieldWithUnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithUnderLine.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				C31BC7FC281FBF8900B733C4 /* CanvasView.swift */,
 				C31BC7FE281FBFC500B733C4 /* AddTextBoxView.swift */,
 				C31BC800281FC11F00B733C4 /* TextBoxView.swift */,
+				C3E7F8622858D9DA00DA11A8 /* TextFieldAlertModifier.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				C3A5599C280415150016F50B /* ExampleView2.swift in Sources */,
 				C35600ED280871B500F7AFB2 /* SettingView.swift in Sources */,
 				C3E8773E27E6DF7500CBFFE9 /* SecureInputView.swift in Sources */,
+				C3E7F8632858D9DA00DA11A8 /* TextFieldAlertModifier.swift in Sources */,
 				C3E8773C27E663AF00CBFFE9 /* ViewExtension.swift in Sources */,
 				11FCEB6227E591EE0013412D /* ImageEditViewModel.swift in Sources */,
 				C31BC801281FC11F00B733C4 /* TextBoxView.swift in Sources */,

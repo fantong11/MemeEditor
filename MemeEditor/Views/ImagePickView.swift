@@ -11,36 +11,61 @@ struct ImagePickView: View {
     // image for ui
     @State private var image: Image?
     @State private var isShowingEditView = false
-    @ObservedObject var viewModel = ImagePickViewModel()
-    
-    
+    @StateObject var viewModel: ImagePickViewModel
     
     var body: some View {
         NavigationView {
             VStack {
-                Button("Choose an image from gallery") {
-                    viewModel.showingImagePicker = true
+                if (!viewModel.creations.isEmpty) {
+                    NavigationLink(destination: ImageEditView().environmentObject(ImageEditViewModel(creation: viewModel.creations.last!)), isActive: $isShowingEditView) {
+                            EmptyView()
+                        
+                    }
                 }
-                .accessibilityIdentifier("pickImageButton")
-                .padding()
                 
-                NavigationLink(destination: ImageEditView(baseImage: $viewModel.inputImage), isActive: $isShowingEditView) { EmptyView() }
-                
-                Button("Tap to use Doc Oct") {
-                    viewModel.inputImage = UIImage(named: "hello-peter")
-                    isShowingEditView = true
+                if viewModel.creations.isEmpty {
+                    Button("Choose an image from gallery") {
+                        viewModel.isInputing = true
+                    }
+                    .accessibilityIdentifier("pickImageButton")
+                    .padding()
+                }
+                else {
+                    List {
+                        ForEach($viewModel.creations) { $creation in
+                            NavigationLink(destination: ImageEditView().environmentObject(ImageEditViewModel(creation: $creation.wrappedValue))) {
+                                Text(creation.name)
+                            }
+                        }
+                    }
+                    .navigationTitle("Creations")
+                    .toolbar {
+                        Button(action: {
+                            viewModel.isInputing = true
+                            
+                        }) {
+                            Image(systemName: "plus")
+                        }
+                        .accessibilityLabel("New Creation")
+                    }
                 }
             }
             .onChange(of: viewModel.inputImage) { _ in
-                if let inputImage = viewModel.inputImage {
-                    image = Image(uiImage: inputImage)
-                    
-                    isShowingEditView = true
+                viewModel.addCreation(creation: Creation(name: viewModel.tempName, image: viewModel.inputImage))
+                isShowingEditView = true
+            }
+            .textFieldAlert(isPresented: $viewModel.isInputing, title: "Enter the Creation name") { name in
+                if let name = name {
+                    viewModel.tempName = name
+                    viewModel.showingImagePicker = true
                 }
+                
             }
             .sheet(isPresented: $viewModel.showingImagePicker) {
                 ImagePicker(image: $viewModel.inputImage)
             }
+            
+            
         }
         
     }
@@ -48,6 +73,9 @@ struct ImagePickView: View {
 
 struct ImagePickView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePickView()
+        Group {
+            ImagePickView(viewModel: .init())
+            ImagePickView(viewModel: .init(creations: Creation.sampleData))
+        }
     }
 }

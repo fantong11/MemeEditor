@@ -10,7 +10,6 @@ import UIKit
 import SwiftUI
 
 protocol Graphic {
-    var id: UUID { get }
     var points: CGPoint { get set }
     var size: CGSize { get set }
 }
@@ -18,7 +17,6 @@ protocol Graphic {
 struct TextBox2: Graphic {
     var points: CGPoint
     var size: CGSize
-    var id: UUID = UUID()
     
     var text = ""
     var isBold = true

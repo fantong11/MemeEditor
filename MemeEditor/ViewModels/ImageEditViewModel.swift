@@ -24,6 +24,12 @@ class ImageEditViewModel: ObservableObject {
     @Published var alertTitle = ""
     @Published var alertMessage = ""
     
+    @Published var creation: Creation
+    
+    init(creation: Creation) {
+        self.creation = creation
+    }
+    
     var showingFeaturesToolBar: Bool {
         return !addingTextBox
     }

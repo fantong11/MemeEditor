@@ -18,3 +18,16 @@ extension View {
         }
     }
 }
+
+extension View {
+    public func textFieldAlert(
+        isPresented: Binding<Bool>,
+        title: String,
+        text: String = "",
+        placeholder: String = "",
+        action: @escaping (String?) -> Void
+    ) -> some View {
+        self.modifier(TextFieldAlertModifier(isPresented: isPresented, title: title, text: text, placeholder: placeholder, action: action))
+    }
+    
+}

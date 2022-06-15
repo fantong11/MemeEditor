@@ -11,17 +11,15 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TabView {
-                ImagePickView().tabItem {
-                    NavigationLink(destination: ImagePickView()) {
+                ImagePickView(viewModel: .init())
+                    .tabItem {
                         Image(systemName: "house")
                         Text("主頁")
-                    }.tag(1)
-                }
-                UserView(viewModel: .init()).tabItem {
-                    NavigationLink(destination: UserView(viewModel: .init())) {
+                    }
+                UserView(viewModel: .init())
+                    .tabItem {
                         Image(systemName: "person")
                         Text("我的")
-                    }.tag(2)
                 }
             }
         }

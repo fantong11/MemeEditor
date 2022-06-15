@@ -61,6 +61,6 @@ struct AddTextBoxView: View {
 struct AddTextBoxView_Previews: PreviewProvider {
     static var previews: some View {
         AddTextBoxView()
-            .environmentObject(ImageEditViewModel())
+            .environmentObject(ImageEditViewModel(creation: Creation.sampleData[0]))
     }
 }
