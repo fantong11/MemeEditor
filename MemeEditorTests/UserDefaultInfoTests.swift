@@ -27,6 +27,15 @@ class UserDefaultInfoTests: XCTestCase {
         XCTAssertNotEqual(integerInfo.get(), 0)
     }
     
+    func testStringDefaults() {
+        let integerInfo = UserDefaultInfo(key: "integerInfo", defaultValue: "12345")
+        XCTAssertEqual(integerInfo.get(), "12345")
+        integerInfo.set("54321")
+        XCTAssertEqual(integerInfo.get(), "54321")
+        integerInfo.set("9876")
+        XCTAssertNotEqual(integerInfo.get(), "0")
+    }
+    
     func testUserDefaultsShouldBeEmptyWhenRemoveAll() {
         let integerInfo = UserDefaultInfo(key: "integerInfo", defaultValue: 12345)
         let stringInfo = UserDefaultInfo(key: "stringInfo", defaultValue: "12345")

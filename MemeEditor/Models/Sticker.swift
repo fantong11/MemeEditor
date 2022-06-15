@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Sticker: Identifiable {
+struct Sticker: Graphic, Identifiable {
     var id = UUID()
     var name: String
     

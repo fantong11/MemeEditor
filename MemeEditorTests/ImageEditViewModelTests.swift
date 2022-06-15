@@ -16,7 +16,7 @@ class ImageEditViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        viewModel = ImageEditViewModel()
+        viewModel = ImageEditViewModel(creation: Creation.sampleData[0])
         canvasView = CanvasView(canvas: .constant(viewModel.canvas), toolPicker: .constant(viewModel.toolPicker), image: .constant(UIImage(named: "hello-peter")), rect: CGSize())
     }
 
@@ -27,12 +27,12 @@ class ImageEditViewModelTests: XCTestCase {
     func testTextBoxesIsEmptyWhenCreateTextBoxIsAddingTextBox() {
         viewModel.addingTextBox = true;
         viewModel.createTextBox()
-        XCTAssertTrue(viewModel.textBoxes.isEmpty)
+        XCTAssertTrue(viewModel.creation.textBoxList.textBoxes.isEmpty)
     }
     
     func testTextBoxesIsNotEmptyWhenCreateTextBoxNotAddingTextBox() {
         viewModel.createTextBox()
-        XCTAssertFalse(viewModel.textBoxes.isEmpty)
+        XCTAssertFalse(viewModel.creation.textBoxList.textBoxes.isEmpty)
     }
     
     func testToolPickerShouldBeInVisibleWhenCreateTextBox() {
@@ -49,7 +49,7 @@ class ImageEditViewModelTests: XCTestCase {
         viewModel.addTextBox()
         viewModel.createTextBox()
         viewModel.addTextBox()
-        XCTAssertEqual(viewModel.textBoxes.count, 4)
+        XCTAssertEqual(viewModel.creation.textBoxList.textBoxes.count, 4)
     }
     
     func testTextBoxesHaveCorrectLengthWhenCreateTextBoxAndCancelTextBoxView() {
@@ -61,15 +61,15 @@ class ImageEditViewModelTests: XCTestCase {
         viewModel.addTextBox()
         viewModel.createTextBox()
         viewModel.cancelTextBoxView()
-        XCTAssertEqual(viewModel.textBoxes.count, 3)
+        XCTAssertEqual(viewModel.creation.textBoxList.textBoxes.count, 3)
     }
     
     func testGetIndex() {
         let textBox = TextBox()
-        viewModel.textBoxes.append(TextBox())
-        viewModel.textBoxes.append(textBox)
-        viewModel.textBoxes.append(TextBox())
-        viewModel.textBoxes.append(TextBox())
+        viewModel.creation.textBoxList.textBoxes.append(TextBox())
+        viewModel.creation.textBoxList.textBoxes.append(textBox)
+        viewModel.creation.textBoxList.textBoxes.append(TextBox())
+        viewModel.creation.textBoxList.textBoxes.append(TextBox())
         XCTAssertEqual(viewModel.getIndex(of: textBox), 1)
     }
 

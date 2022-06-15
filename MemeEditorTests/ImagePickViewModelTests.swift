@@ -30,7 +30,19 @@ class ImagePickeViewModelTests: XCTestCase {
     
     func testLoadImage() {
         viewModel.inputImage = UIImage(named: "hello-peter")
-        
+    }
+    
+    func testAddCreation() {
+        viewModel.addCreation(creation: Creation(name: "test", image: UIImage(named: "hello-peter")))
+        viewModel.addCreation(creation: Creation(name: "test", image: UIImage(named: "hello-peter")))
+        XCTAssertEqual(viewModel.creations.count, 2)
+    }
+    
+    func testDeleteCreation() {
+        viewModel.addCreation(creation: Creation(name: "test", image: UIImage(named: "hello-peter")))
+        viewModel.addCreation(creation: Creation(name: "test", image: UIImage(named: "hello-peter")))
+        viewModel.deleteCreation(at: .init(integer: 1))
+        XCTAssertEqual(viewModel.creations.count, 1)
     }
 
     func testPerformanceExample() throws {
