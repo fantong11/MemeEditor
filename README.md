@@ -7,5 +7,5 @@ This project is created for the NTUT OOAD course, some features are not complete
 
 ![login](screenshots/screenshot-login.png)
 ![picker](screenshots/screenshot-picker.png)
-![picker](screenshots/screenshot-stickerEdit.png)
 ![save](screenshots/screenshot-save.png)
+![picker](screenshots/screenshot-stickerEdit.png)
